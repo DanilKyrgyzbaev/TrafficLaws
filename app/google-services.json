@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "668924541498",
+    "firebase_url": "https://trafficlaws.firebaseio.com",
+    "project_id": "trafficlaws",
+    "storage_bucket": "trafficlaws.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668924541498:android:e42857ea49f224847a1303",
+        "android_client_info": {
+          "package_name": "com.pdd.trafficlaws"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668924541498-s8gno4851g3mbq926s1d0qhr84le358n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pdd.trafficlaws",
+            "certificate_hash": "26f6be8202e76f00eae50b9fa9fce48b7684f7ae"
+          }
+        },
+        {
+          "client_id": "668924541498-4qngc5efo0gkl8gniiou9j7htpvdtbr5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaW5YI7Hd9FM9NMx6bEBbeYNjnhdyTp6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668924541498-4qngc5efo0gkl8gniiou9j7htpvdtbr5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
