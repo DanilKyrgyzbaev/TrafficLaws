@@ -1,4 +1,4 @@
-package com.pdd.trafficlaws.Adapter;
+package com.pdd.trafficlaws.shtraf;
 
 
 import android.content.Context;
@@ -10,47 +10,46 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.pdd.trafficlaws.Model.Modelstatya;
+import com.pdd.trafficlaws.OnItemClickListener;
 import com.pdd.trafficlaws.R;
+import com.pdd.trafficlaws.utils.ResourceManager;
+import com.pdd.trafficlaws.utils.StringUtils;
 
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private Context context;
-    private List<Modelstatya> list;
+    private List<ModelStatiya> modelStatiyaListlist;
     private OnItemClickListener onItemClickListener;
 
-    public MyAdapter(Context context, List<Modelstatya> list){
+    public MyAdapter(Context context, List<ModelStatiya> list) {
         this.context = context;
-        this.list = list;
+        this.modelStatiyaListlist = list;
     }
 
-    public interface OnItemClickListener{
-        void onItemClick(int pos);
-    }
     @NonNull
     @Override
     public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_shtraf, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.row_shtraf, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bind(list.get(position));
+        holder.bind(modelStatiyaListlist.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return modelStatiyaListlist.size();
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView statya, chast, fabula;
 
@@ -58,18 +57,18 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             super(itemView);
             statya = itemView.findViewById(R.id.statya);
             chast = itemView.findViewById(R.id.chastei);
-            fabula = itemView.findViewById(R.id.textView);
+            fabula = itemView.findViewById(R.id.fabula);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    onItemClickListener.onItemClick(getAdapterPosition());
+                    onItemClickListener.onItemClickListener(getAdapterPosition());
                 }
             });
         }
 
-        public void bind(Modelstatya modelstatya){
-            statya.setText(modelstatya.getStatiya());
-            chast.setText(modelstatya.getChast());
+        void bind(ModelStatiya modelstatya) {
+            statya.setText(String.format(ResourceManager.getStringById(itemView.getContext(), R.string.statiya), StringUtils.replaceDotToDahs(modelstatya.getStatiya())));
+            chast.setText(String.format((ResourceManager.getStringById(itemView.getContext(), R.string.chast)),StringUtils.replaceDotToDahs(modelstatya.getChast())));
             fabula.setText(modelstatya.getFabula());
         }
     }

@@ -2,7 +2,6 @@ package com.pdd.trafficlaws.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
 import android.view.View;
 
@@ -22,10 +21,8 @@ public class TrafficLawsActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                TrafficLawsActivity.this.onBackPressed();
             }
         });
-
-
     }
 }

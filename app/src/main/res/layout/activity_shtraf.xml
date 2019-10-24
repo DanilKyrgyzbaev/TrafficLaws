@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".activity.ShtrafActivity">
+    tools:context=".shtraf.ShtrafActivity">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -53,7 +53,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/app_bar_layout" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_shtraf"

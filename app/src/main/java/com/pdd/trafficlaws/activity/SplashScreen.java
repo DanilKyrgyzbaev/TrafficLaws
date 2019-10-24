@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreen extends AppCompatActivity {
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,7 @@ public class SplashScreen extends AppCompatActivity {
             @Override
             public void run() {
                 // do something
-                Intent intent = new Intent(SplashScreen.this,MainActivity.class);
+                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
                 // If you just use this that is not a valid context. Use ActivityName.this
                 startActivity(intent);
                 finish();

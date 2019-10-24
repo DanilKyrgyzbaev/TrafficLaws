@@ -10,4 +10,11 @@
     <string name="gas_station_prices">Цены на Азс</string>
     <string name="shtrafy">Штрафы</string>
     <string name="statya">Редакция КоАО КР с изменениями от 17.08.2019г.(Закон КР от 09.09.2019г.№ 211)</string>
+    <string name="extronyecall">Экстронные службы</string>
+    <string name="reder">Пожарная служба</string>
+    <string name="statiya">Статья-%s</string>
+    <string name="chast">Часть %s</string>
+    <string name="polisya">Милиция</string>
+    <string name="medical"><![CDATA[<<Медикал Сервис>> частная медицинская служба]]></string>
+    <string name="medical_number">151, +996(312)43-91-51</string>
 </resources>

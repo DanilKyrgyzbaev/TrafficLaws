@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.pdd.trafficlaws">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,13 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.AdditionActivity"/>
+        <activity android:name=".shtraf.OnResultActivity"></activity>
+        <activity android:name=".shtraf.DetalisActivity" />
+        <activity android:name=".activity.AdditionActivity" />
         <activity android:name=".activity.CarInsuranceActivity" />
         <activity android:name=".activity.AutoNewsCarActivity" />
         <activity android:name=".activity.GasStationPricesActivity" />
-        <activity android:name=".activity.CallCentreActivity" />
+        <activity android:name=".callcentre.CallCentreActivity" />
         <activity android:name=".activity.TrafficLawsActivity" />
-        <activity android:name=".activity.ShtrafActivity"/>
+        <activity android:name=".shtraf.ShtrafActivity" />
         <activity
             android:name=".activity.SplashScreen"
             android:theme="@style/SplashScreen">
