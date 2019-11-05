@@ -14,15 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".shtraf.OnResultActivity"></activity>
-        <activity android:name=".shtraf.DetalisActivity" />
+        <activity android:name=".sda_kr.OnResultSdaKrActivity"></activity>
+        <activity android:name=".fine.OnResultFineActivity" />
+        <activity android:name=".fine.DetalisActivity" />
         <activity android:name=".activity.AdditionActivity" />
         <activity android:name=".activity.CarInsuranceActivity" />
         <activity android:name=".activity.AutoNewsCarActivity" />
         <activity android:name=".activity.GasStationPricesActivity" />
         <activity android:name=".callcentre.CallCentreActivity" />
-        <activity android:name=".activity.TrafficLawsActivity" />
-        <activity android:name=".shtraf.ShtrafActivity" />
+        <activity android:name=".sda_kr.TrafficLawsActivity" />
+        <activity android:name=".fine.FineActivity" />
         <activity
             android:name=".activity.SplashScreen"
             android:theme="@style/SplashScreen">

@@ -1,35 +1,12 @@
 package com.pdd.trafficlaws.callcentre;
 
 public class CallCenterModel {
-String emergencyservices;
-String fireservice;
-String number;
-int image;
 
-    public CallCenterModel(String emergencyservices, String fireservice, String number,int image) {
-        this.emergencyservices = emergencyservices;
-        this.fireservice = fireservice;
-        this.number = number;
-        this.image = image;
-    }
+    private String number;
+    private  String name;
+    private  long id;
 
     public CallCenterModel() {
-    }
-
-    public String getEmergencyservices() {
-        return emergencyservices;
-    }
-
-    public void setEmergencyservices(String emergencyservices) {
-        this.emergencyservices = emergencyservices;
-    }
-
-    public String getFireservice() {
-        return fireservice;
-    }
-
-    public void setFireservice(String fireservice) {
-        this.fireservice = fireservice;
     }
 
     public String getNumber() {
@@ -40,11 +17,19 @@ int image;
         this.number = number;
     }
 
-    public int getImage() {
-        return image;
+    public String getName() {
+        return name;
     }
 
-    public void setImage(int image) {
-        this.image = image;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

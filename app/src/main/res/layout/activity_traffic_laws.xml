@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".activity.TrafficLawsActivity">
+    tools:context=".sda_kr.TrafficLawsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
@@ -37,70 +37,68 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/russian"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:text="На Руском"
+            android:textStyle="normal"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/kyrgyz"
+            android:background="@drawable/button_shape_pussian"/>
+
+        <Button
+            android:id="@+id/kyrgyz"
+            android:layout_width="170dp"
+            android:layout_height="40dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:text="Кыргызча"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintLeft_toRightOf="@id/russian"
+            android:background="@drawable/button_shape_kyrgyz"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <com.alespero.expandablecardview.ExpandableCardView
-                android:id="@+id/profil"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="1dp"
                 app:expandOnClick="true"
-                app:inner_view="@layout/row_cardviewone"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
-                app:title="@string/extronyecall">
+                app:inner_view="@layout/row_sda_kr"
+                app:title="ПДД КР.                            Пункты 1-8.">
 
             </com.alespero.expandablecardview.ExpandableCardView>
-
-            <com.alespero.expandablecardview.ExpandableCardView
-                android:id="@+id/cardviewone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="1dp"
-                app:expandOnClick="true"
-                app:inner_view="@layout/row_cardviewone"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/profil"
-                app:title="Министерство Внутернних Дел КР">
-
-            </com.alespero.expandablecardview.ExpandableCardView>
-
-            <com.alespero.expandablecardview.ExpandableCardView
-                android:id="@+id/cardviewtwo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="1dp"
-                app:expandOnClick="true"
-                app:inner_view="@layout/row_cardviewone"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cardviewone"
-                app:title="Справочные ГАИ КР">
-
-            </com.alespero.expandablecardview.ExpandableCardView>
-
         </LinearLayout>
 
     </ScrollView>

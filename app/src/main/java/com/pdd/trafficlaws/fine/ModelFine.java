@@ -1,8 +1,8 @@
-package com.pdd.trafficlaws.shtraf;
+package com.pdd.trafficlaws.fine;
 
 import java.io.Serializable;
 
-public class ModelStatiya implements Serializable {
+public class ModelFine implements Serializable {
     private String chast;
     private String fabula;
     private String statiya;
@@ -16,6 +16,7 @@ public class ModelStatiya implements Serializable {
     private String note;
     private String absent;
     private String id;
+    private long order;
 
     public String getId() {
         return id;
@@ -25,7 +26,7 @@ public class ModelStatiya implements Serializable {
         this.id = id;
     }
 
-    public ModelStatiya() {
+    public ModelFine() {
     }
 
     public String getFabula() {
@@ -122,5 +123,13 @@ public class ModelStatiya implements Serializable {
 
     public void setAbsent(String absent) {
         this.absent = absent;
+    }
+
+    public long getOrder() {
+        return order;
+    }
+
+    public void setOrder(long order) {
+        this.order = order;
     }
 }

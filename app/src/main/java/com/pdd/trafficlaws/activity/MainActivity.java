@@ -9,7 +9,8 @@ import androidx.cardview.widget.CardView;
 
 import com.pdd.trafficlaws.R;
 import com.pdd.trafficlaws.callcentre.CallCentreActivity;
-import com.pdd.trafficlaws.shtraf.ShtrafActivity;
+import com.pdd.trafficlaws.sda_kr.TrafficLawsActivity;
+import com.pdd.trafficlaws.fine.FineActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 launchActivity(TrafficLawsActivity.class);
                 break;
             case R.id.fines:
-                launchActivity(ShtrafActivity.class);
+                launchActivity(FineActivity.class);
                 break;
 
         }

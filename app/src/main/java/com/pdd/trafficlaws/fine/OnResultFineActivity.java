@@ -1,4 +1,4 @@
-package com.pdd.trafficlaws.shtraf;
+package com.pdd.trafficlaws.fine;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.pdd.trafficlaws.R;
 
-public class OnResultActivity extends AppCompatActivity {
+public class OnResultFineActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView chast;
     private TextView fabula;
@@ -24,14 +24,17 @@ public class OnResultActivity extends AppCompatActivity {
     private TextView note;
     private TextView absent;
 
-    private ModelStatiya modelStatiya;
+    private ModelFine modelFine;
+    private String FINE = "fine";
+    private String STATIYA = "Статья-";
+    private String CHAST = "Часть";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_result);
+        setContentView(R.layout.activity_on_result_fine);
 
-        modelStatiya = (ModelStatiya) getIntent().getSerializableExtra("shtraf");
+        modelFine = (ModelFine) getIntent().getSerializableExtra(FINE);
 
         chast = findViewById(R.id.chastei);
         fabula = findViewById(R.id.fabula);
@@ -46,18 +49,18 @@ public class OnResultActivity extends AppCompatActivity {
         note = findViewById(R.id.note);
         absent = findViewById(R.id.absent);
 
-        fines.setText(modelStatiya.getFines());
-        chast.setText("Часть"+modelStatiya.getChast());
-        fabula.setText(modelStatiya.getFabula());
-        statiya.setText("Статья-" + modelStatiya.getStatiya());
-        violation.setText(modelStatiya.getViolation());
-        individual_prices.setText(modelStatiya.getIndividual_prices());
-        entities_prices.setText(modelStatiya.getEntities_prices());
-        individual.setText(modelStatiya.getIndividual());
-        entities.setText(modelStatiya.getEntities());
-        category.setText(modelStatiya.getCategory());
-        note.setText(modelStatiya.getNote());
-        absent.setText(modelStatiya.getAbsent());
+        fines.setText(modelFine.getFines());
+        chast.setText(CHAST+ modelFine.getChast());
+        fabula.setText(modelFine.getFabula());
+        statiya.setText(STATIYA + modelFine.getStatiya());
+        violation.setText(modelFine.getViolation());
+        individual_prices.setText(modelFine.getIndividual_prices());
+        entities_prices.setText(modelFine.getEntities_prices());
+        individual.setText(modelFine.getIndividual());
+        entities.setText(modelFine.getEntities());
+        category.setText(modelFine.getCategory());
+        note.setText(modelFine.getNote());
+        absent.setText(modelFine.getAbsent());
 
 
         toolbar = findViewById(R.id.toolbar);

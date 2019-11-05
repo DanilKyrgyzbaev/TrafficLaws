@@ -1,4 +1,4 @@
-package com.pdd.trafficlaws.shtraf;
+package com.pdd.trafficlaws.fine;
 
 
 import android.content.Context;
@@ -17,32 +17,32 @@ import com.pdd.trafficlaws.utils.StringUtils;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
+public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
 
     private Context context;
-    private List<ModelStatiya> modelStatiyaListlist;
+    private List<ModelFine> modelFineListlist;
     private OnItemClickListener onItemClickListener;
 
-    public MyAdapter(Context context, List<ModelStatiya> list) {
+    public FineAdapter(Context context, List<ModelFine> list) {
         this.context = context;
-        this.modelStatiyaListlist = list;
+        this.modelFineListlist = list;
     }
 
     @NonNull
     @Override
-    public MyAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FineAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.row_shtraf, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bind(modelStatiyaListlist.get(position));
+        holder.bind(modelFineListlist.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return modelStatiyaListlist.size();
+        return modelFineListlist.size();
     }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
@@ -66,7 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             });
         }
 
-        void bind(ModelStatiya modelstatya) {
+        void bind(ModelFine modelstatya) {
             statya.setText(String.format(ResourceManager.getStringById(itemView.getContext(), R.string.statiya), StringUtils.replaceDotToDahs(modelstatya.getStatiya())));
             chast.setText(String.format((ResourceManager.getStringById(itemView.getContext(), R.string.chast)),StringUtils.replaceDotToDahs(modelstatya.getChast())));
             fabula.setText(modelstatya.getFabula());
