@@ -1,5 +1,4 @@
-package com.pdd.trafficlaws.sda_kr;
-
+package com.pdd.trafficlaws.sdakr;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,14 +11,14 @@ import com.pdd.trafficlaws.OnItemClickListener;
 import java.util.List;
 import static com.pdd.trafficlaws.R.*;
 
-public class MySdaKrAdapter extends RecyclerView.Adapter<MySdaKrAdapter.ViewHolder> {
+public class MySdaKrAdapterThree extends RecyclerView.Adapter<MySdaKrAdapterThree.ViewHolder> {
     private Context context;
-    private List<ModelSdaKR> modelSdaKR;
+    private List<ModelSdaKrThree> modelSdaKrThree;
     private OnItemClickListener onItemClickListener;
 
-    public MySdaKrAdapter(Context context,List<ModelSdaKR>list){
+    public MySdaKrAdapterThree(Context context,List<ModelSdaKrThree>list){
         this.context = context;
-        this.modelSdaKR = list;
+        this.modelSdaKrThree = list;
     }
 
 
@@ -27,20 +26,20 @@ public class MySdaKrAdapter extends RecyclerView.Adapter<MySdaKrAdapter.ViewHold
 
     @NonNull
     @Override
-    public MySdaKrAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(layout.row_traffic_laws, parent, false);
-        return new MySdaKrAdapter.ViewHolder(view);
+    public MySdaKrAdapterThree.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(layout.row_traffic_lawstwo, parent, false);
+        return new MySdaKrAdapterThree.ViewHolder(view);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MySdaKrAdapter.ViewHolder holder, int position) {
-        holder.bind(modelSdaKR.get(position));
+    public void onBindViewHolder(@NonNull MySdaKrAdapterThree.ViewHolder holder, int position) {
+        holder.bind(modelSdaKrThree.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return modelSdaKR.size();
+        return modelSdaKrThree.size();
     }
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
@@ -66,9 +65,13 @@ public class MySdaKrAdapter extends RecyclerView.Adapter<MySdaKrAdapter.ViewHold
             });
         }
 
-        void bind(ModelSdaKR modelSdaKR) {
-            general_provisions.setText(modelSdaKR.getGeneral_provisions());
+        void bind(ModelSdaKrThree modelSdaKrThree) {
+            general_provisions.setText(modelSdaKrThree.getGeneral_provisions());
+            //general_provisions.setText(modelSdaKrThree.getGeneral_provisions());
 
         }
     }
 }
+
+// MySdaKrAdapterThree
+

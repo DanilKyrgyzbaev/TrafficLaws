@@ -1,12 +1,11 @@
-package com.pdd.trafficlaws.callcentre;
+package com.pdd.trafficlaws.callcentre.model;
 
-public class CallCenterModel {
-
+public class CallCenterModelFaif {
     private String number;
     private  String name;
     private  long id;
 
-    public CallCenterModel() {
+    public CallCenterModelFaif() {
     }
 
     public String getNumber() {

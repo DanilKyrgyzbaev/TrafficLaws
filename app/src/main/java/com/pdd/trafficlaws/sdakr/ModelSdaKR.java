@@ -1,4 +1,4 @@
-package com.pdd.trafficlaws.sda_kr;
+package com.pdd.trafficlaws.sdakr;
 
 import java.io.Serializable;
 

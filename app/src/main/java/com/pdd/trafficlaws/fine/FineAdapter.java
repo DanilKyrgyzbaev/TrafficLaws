@@ -18,7 +18,6 @@ import com.pdd.trafficlaws.utils.StringUtils;
 import java.util.List;
 
 public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
-
     private Context context;
     private List<ModelFine> modelFineListlist;
     private OnItemClickListener onItemClickListener;
@@ -58,17 +57,12 @@ public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
             statya = itemView.findViewById(R.id.statya);
             chast = itemView.findViewById(R.id.chastei);
             fabula = itemView.findViewById(R.id.fabula);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onItemClickListener.onItemClickListener(getAdapterPosition());
-                }
-            });
+            itemView.setOnClickListener(view -> onItemClickListener.onItemClickListener(getAdapterPosition()));
         }
 
         void bind(ModelFine modelstatya) {
             statya.setText(String.format(ResourceManager.getStringById(itemView.getContext(), R.string.statiya), StringUtils.replaceDotToDahs(modelstatya.getStatiya())));
-            chast.setText(String.format((ResourceManager.getStringById(itemView.getContext(), R.string.chast)),StringUtils.replaceDotToDahs(modelstatya.getChast())));
+            chast.setText(String.format((ResourceManager.getStringById(itemView.getContext(), R.string.chast)), StringUtils.replaceDotToDahs(modelstatya.getChast())));
             fabula.setText(modelstatya.getFabula());
         }
     }

@@ -14,15 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".sda_kr.OnResultSdaKrActivity"></activity>
+        <activity android:name=".sdakr.OnResultSdaKrThreeActivity"></activity>
+        <activity android:name=".sdakr.OnResultSdaKrTwoActivity" />
+        <activity android:name=".sdakr.OnResultSdaKrActivity" />
         <activity android:name=".fine.OnResultFineActivity" />
         <activity android:name=".fine.DetalisActivity" />
         <activity android:name=".activity.AdditionActivity" />
         <activity android:name=".activity.CarInsuranceActivity" />
         <activity android:name=".activity.AutoNewsCarActivity" />
         <activity android:name=".activity.GasStationPricesActivity" />
-        <activity android:name=".callcentre.CallCentreActivity" />
-        <activity android:name=".sda_kr.TrafficLawsActivity" />
+        <activity android:name=".callcentre.activity.CallCentreActivity" />
+        <activity android:name=".sdakr.TrafficLawsActivity" />
         <activity android:name=".fine.FineActivity" />
         <activity
             android:name=".activity.SplashScreen"

@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.pdd.trafficlaws.R;
-import com.pdd.trafficlaws.callcentre.CallCentreActivity;
-import com.pdd.trafficlaws.sda_kr.TrafficLawsActivity;
+import com.pdd.trafficlaws.callcentre.activity.CallCentreActivity;
+import com.pdd.trafficlaws.sdakr.TrafficLawsActivity;
 import com.pdd.trafficlaws.fine.FineActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {

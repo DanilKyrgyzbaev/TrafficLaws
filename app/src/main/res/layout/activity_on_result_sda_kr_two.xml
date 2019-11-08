@@ -31,7 +31,6 @@
                 android:textSize="18sp"
                 android:textStyle="normal" />
 
-
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -73,9 +72,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
