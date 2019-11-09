@@ -17,4 +17,6 @@
     <string name="polisya">Милиция</string>
     <string name="medical"><![CDATA[<<Медикал Сервис>> частная медицинская служба]]></string>
     <string name="medical_number">151, +996(312)43-91-51</string>
+    <string name="description_gazprom">Тут представлены текущие цены на бензин, на газ, и дизельное топливо.</string>
+    <string name="gazprom_neft">Газпром нефть Азия</string>
 </resources>
