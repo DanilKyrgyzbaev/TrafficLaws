@@ -9,6 +9,7 @@ import androidx.cardview.widget.CardView;
 
 import com.pdd.trafficlaws.R;
 import com.pdd.trafficlaws.callcentre.activity.CallCentreActivity;
+import com.pdd.trafficlaws.gasStationPrices.GasStationPricesActivity;
 import com.pdd.trafficlaws.sdakr.TrafficLawsActivity;
 import com.pdd.trafficlaws.fine.FineActivity;
 

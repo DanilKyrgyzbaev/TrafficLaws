@@ -1,4 +1,4 @@
-package com.pdd.trafficlaws.activity;
+package com.pdd.trafficlaws.gasStationPrices;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -18,11 +18,6 @@ public class GasStationPricesActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_navigate);
         toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener(view -> onBackPressed());
     }
 }
