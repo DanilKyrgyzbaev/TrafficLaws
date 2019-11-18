@@ -75,10 +75,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fines:
                 launchActivity(FineActivity.class);
                 break;
-
         }
     }
-
     private void launchActivity(Class<?> calledActivity) {
         startActivity(new Intent(MainActivity.this, calledActivity));
     }

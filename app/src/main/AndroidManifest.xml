@@ -4,6 +4,7 @@
     package="com.pdd.trafficlaws">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
 
     <application
@@ -14,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".gasStationPrices.GazpromNeftAsialActivity"></activity>
+        <activity android:name=".gasStationPrices.GazpromNeftAsialActivity">
+
+        </activity>
         <activity
             android:name=".sdakr.OnResultSdaKrThreeActivity"
             android:screenOrientation="portrait" />
