@@ -15,7 +15,7 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
     private TextView general_provisions;
     private ModelSdaKR modelSdaKR;
     private ModelSdaKrTwo modelSdaKrTwo;
-    private String SDAKR = "SdaKr";
+    private String SDAKR = "SdaKrKg";
 
 
     @Override
@@ -36,12 +36,7 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
         general_provisions = findViewById(R.id.sda_kr_on_result);
         toolbar.setCollapseContentDescription("hknglhkg;");
 //        toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
         description.setText(modelSdaKR.getDescription());
         general_provisions.setText(modelSdaKR.getGeneral_provisions());
 

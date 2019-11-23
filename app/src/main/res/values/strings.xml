@@ -9,14 +9,12 @@
     <string name="auto_news_cr">Автоновости КР</string>
     <string name="gas_station_prices">Цены на Азс</string>
     <string name="shtrafy">Штрафы</string>
-    <string name="statya">Редакция КоАО КР с изменениями от 17.08.2019г.(Закон КР от 09.09.2019г.№ 211)</string>
+    <string name="statya">(В редакции постановлений Правительства КР от 3 марта 2009 года N 136, 28 мая 2012 года N 329, 27 сентября 2012 года N 656, 20 октября 2015 года № 714, 16 января 2016 года № 9, 25 декабря 2017 года № 833, 7 октября 2019 года № 522 , 31 октября 2019 года № 588 )</string>
     <string name="extronyecall">Экстронные службы</string>
     <string name="reder">Пожарная служба</string>
-    <string name="statiya">Статья-%s</string>
     <string name="chast">Часть %s</string>
     <string name="polisya">Милиция</string>
     <string name="medical"><![CDATA[<<Медикал Сервис>> частная медицинская служба]]></string>
-    <string name="medical_number">151, +996(312)43-91-51</string>
     <string name="description_gazprom">Тут представлены текущие цены на бензин, на газ, и дизельное топливо.</string>
     <string name="gazprom_neft">Газпром нефть Азия</string>
     <string name="_1_24">База данных на сервере обновляться 1 раз в течение 24 часов согласно данным, приведенным на официальных сайтах автозаправочных компании</string>

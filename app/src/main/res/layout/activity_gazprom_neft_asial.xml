@@ -192,6 +192,7 @@
                         android:textSize="18sp"/>
 
                     <TextView
+                        android:id="@+id/ai95"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="48.50 сом"
@@ -234,6 +235,7 @@
                         android:textSize="18sp"/>
 
                     <TextView
+                        android:id="@+id/ai92"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="48.50 сом"
@@ -276,6 +278,7 @@
                         android:textSize="18sp"/>
 
                     <TextView
+                        android:id="@+id/ai80"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="48.50 сом"
@@ -318,16 +321,17 @@
                         android:textSize="18sp"/>
 
                     <TextView
+                        android:id="@+id/gaz_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="175dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="10dp"
                         android:text="48.50 сом"
                         android:textColor="@color/black"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="160dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="16dp"
-                        android:textStyle="normal"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
 
                 </LinearLayout>
 
@@ -360,16 +364,17 @@
                         android:textSize="18sp"/>
 
                     <TextView
+                        android:id="@+id/diesel_fuel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="10dp"
                         android:text="48.50 сом"
                         android:textColor="@color/black"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="26dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="16dp"
-                        android:textStyle="normal"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        android:textStyle="normal" />
 
                 </LinearLayout>
 
@@ -399,16 +404,16 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="10dp"
                         android:textStyle="normal"
-                        android:textSize="18sp"/>
+                        android:textSize="14sp"/>
 
                     <TextView
-                        android:id="@+id/iner"
+                        android:id="@+id/diesel_fuel_winter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="48.50 сом"
                         android:textColor="@color/black"
                         android:layout_marginTop="10dp"
-                        android:layout_marginStart="1dp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginBottom="10dp"
                         android:layout_marginEnd="16dp"
                         android:textStyle="normal"

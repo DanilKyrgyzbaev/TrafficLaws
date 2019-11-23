@@ -14,7 +14,7 @@ public class OnResultSdaKrTwoActivity extends AppCompatActivity  {
     private TextView description;
     private TextView general_provisions;
     private ModelSdaKrTwo modelSdaKrTwo;
-    private String SDAKR = "SdaKr";
+    private String SDAKR = "SdaKrKg";
 
 
     @Override

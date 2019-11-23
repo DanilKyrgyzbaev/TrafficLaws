@@ -23,16 +23,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:singleLine="true"
-                android:text="@string/shtrafy"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="normal" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/shtrafy"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/lang_kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@id/toolbar_title"
+                    app:layout_constraintBottom_toBottomOf="@id/toolbar_title"
+                    android:text="Kg"
+                    android:layout_marginLeft="16dp"/>
+
+                <TextView
+                    android:id="@+id/lang_ru"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:textSize="16sp"
+                    app:layout_constraintLeft_toRightOf="@id/lang_kg"
+                    app:layout_constraintBottom_toBottomOf="@id/toolbar_title"
+                    android:layout_marginLeft="16dp"
+                    android:text="Ru"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -42,8 +75,10 @@
     <TextView
         android:id="@+id/obnof"
         android:layout_width="373dp"
-        android:layout_height="39dp"
+        android:layout_height="95dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:textColor="@color/black"

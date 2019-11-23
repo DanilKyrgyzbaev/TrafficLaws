@@ -26,8 +26,6 @@ public class OnResultFineActivity extends AppCompatActivity {
 
     private ModelFine modelFine;
     private String FINE = "fine";
-    private String STATIYA = "Статья-";
-    private String CHAST = "Часть";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +48,9 @@ public class OnResultFineActivity extends AppCompatActivity {
         absent = findViewById(R.id.absent);
 
         fines.setText(modelFine.getFines());
-        chast.setText(CHAST+ modelFine.getChast());
+        chast.setText(modelFine.getChast());
         fabula.setText(modelFine.getFabula());
-        statiya.setText(STATIYA + modelFine.getStatiya());
+        statiya.setText(modelFine.getStatiya());
         violation.setText(modelFine.getViolation());
         individual_prices.setText(modelFine.getIndividual_prices());
         entities_prices.setText(modelFine.getEntities_prices());
@@ -66,12 +64,7 @@ public class OnResultFineActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_navigate);
         toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
 
 
     }

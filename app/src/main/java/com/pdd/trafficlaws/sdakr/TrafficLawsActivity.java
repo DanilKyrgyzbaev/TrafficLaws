@@ -28,7 +28,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
     private RecyclerView recyclerView, recyclerViewtwo , recyclerViewthree;
     private Toolbar toolbar;
     private String TAG = "tag";
-    private String SDAKR = "SdaKr";
+    private String SDAKR = "SdaKrKg";
     private ArrayList<ModelSdaKR> modelSdaKrListlist = new ArrayList<>();
     private ArrayList<ModelSdaKrTwo> modelSdaKrTwoListlist = new ArrayList<>();
     private ArrayList<ModelSdaKrThree> modelSdaKrThrees = new ArrayList<>();

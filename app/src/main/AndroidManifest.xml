@@ -19,14 +19,11 @@
 
         </activity>
         <activity
-            android:name=".sdakr.OnResultSdaKrThreeActivity"
-            android:screenOrientation="portrait" />
+            android:name=".sdakr.OnResultSdaKrThreeActivity" />
         <activity
-            android:name=".sdakr.OnResultSdaKrTwoActivity"
-            android:screenOrientation="portrait" />
+            android:name=".sdakr.OnResultSdaKrTwoActivity" />
         <activity
-            android:name=".sdakr.OnResultSdaKrActivity"
-            android:screenOrientation="portrait" />
+            android:name=".sdakr.OnResultSdaKrActivity" />
         <activity
             android:name=".fine.OnResultFineActivity"
             android:screenOrientation="portrait" />
@@ -47,7 +44,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".sdakr.TrafficLawsActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".fine.FineActivity"
             android:screenOrientation="portrait" />

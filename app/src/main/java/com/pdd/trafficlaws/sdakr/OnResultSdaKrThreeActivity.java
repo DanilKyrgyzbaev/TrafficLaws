@@ -14,7 +14,7 @@ public class OnResultSdaKrThreeActivity extends AppCompatActivity {
     private TextView description;
     private TextView general_provisions;
     private ModelSdaKrThree modelSdaKrThree;
-    private String SDAKR = "SdaKr";
+    private String SDAKR = "SdaKrKg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

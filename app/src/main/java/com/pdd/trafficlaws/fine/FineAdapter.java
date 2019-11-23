@@ -9,8 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.pdd.trafficlaws.OnItemClickListener;
 import com.pdd.trafficlaws.R;
-import com.pdd.trafficlaws.utils.ResourceManager;
-import com.pdd.trafficlaws.utils.StringUtils;
 import java.util.List;
 
 public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
@@ -57,8 +55,8 @@ public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
         }
 
         void bind(ModelFine modelstatya) {
-            statya.setText(String.format(ResourceManager.getStringById(itemView.getContext(), R.string.statiya), StringUtils.replaceDotToDahs(modelstatya.getStatiya())));
-            chast.setText(String.format((ResourceManager.getStringById(itemView.getContext(), R.string.chast)), StringUtils.replaceDotToDahs(modelstatya.getChast())));
+            statya.setText(modelstatya.getStatiya());
+            chast.setText(modelstatya.getChast());
             fabula.setText(modelstatya.getFabula());
         }
     }
