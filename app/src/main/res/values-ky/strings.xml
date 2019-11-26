@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="fines">Айып пул</string>
+    <string name="trafficLaws">Жол кыймылынын ЭРЕЖЕЛЕРИ</string>
+    <string name="shtrafy">Айып пул</string>
+    <string name="gas_station_prices">Күйүүчү май баасы</string>
+    <string name="callcentre">Байланыш телефондору</string>
+    <string name="addition">Кошумча маалыматар</string>
+    <string name="pdd">КР ЖКЭ жана айып пулдар</string>
+</resources>

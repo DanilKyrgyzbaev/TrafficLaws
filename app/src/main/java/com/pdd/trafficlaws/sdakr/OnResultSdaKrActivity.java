@@ -15,7 +15,7 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
     private TextView general_provisions;
     private ModelSdaKR modelSdaKR;
     private ModelSdaKrTwo modelSdaKrTwo;
-    private String SDAKR = "SdaKrKg";
+    private String SDAKR = "SdaKr";
 
 
     @Override
@@ -24,6 +24,11 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
         setContentView(R.layout.activity_on_result_sda_kr);
 
         modelSdaKR = (ModelSdaKR) getIntent().getSerializableExtra(SDAKR);
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
+            SDAKR = "SdaKrKg";
+        } else {
+            SDAKR = "SdaKr";
+        }
 
 
 

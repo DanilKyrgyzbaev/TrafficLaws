@@ -8,28 +8,50 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pdd"
-            android:gravity="center"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="17dp"
-            android:layout_marginBottom="18dp"
-            android:layout_marginEnd="99dp"
-            android:textStyle="normal"
-            android:textColor="@color/black"
-            android:textSize="16sp"/>
+            android:layout_height="60dp">
 
+            <TextView
+                android:id="@+id/pdd_text"
+                android:layout_width="173dp"
+                android:layout_height="22dp"
+                android:gravity="center"
+                android:text="@string/pdd"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/switchCompat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switchCompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textOff="KG"
+                android:textOn="RU"
+                android:layout_marginEnd="20dp"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:thumb="@drawable/sw_thumb"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showText="true"
+                app:track="@drawable/sw_track" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/black"
+        android:elevation="1dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -96,10 +118,11 @@
                     android:layout_marginBottom="10dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="148dp"
+                    android:layout_width="match_parent"
                     android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginEnd="56dp"
                     android:text="@string/trafficLaws"
                     android:textSize="16sp"
                     android:textColor="@color/black"
@@ -275,9 +298,5 @@
         </LinearLayout>
 
     </ScrollView>
-
-
-
-
 
 </LinearLayout>

@@ -21,17 +21,19 @@ import com.pdd.trafficlaws.R;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 public class FineActivity extends AppCompatActivity {
 
 
     private final String STATIYA = "statiya";
     private final String CHAST = "chast";
-    private String SHTRAF = "ShtrafKg";
+    private String SHTRAF;
     private final String ORDER = "order";
     private String TAG = "tag";
     private TextView langRu;
     private TextView langKg;
+    private TextView absent;
 
     private FirebaseFirestore db;
     private CollectionReference ref;
@@ -50,30 +52,13 @@ public class FineActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.ic_navigate);
         toolbar.setTitle("activity");
         toolbar.setNavigationOnClickListener(view -> onBackPressed());
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
+            SHTRAF = "ShtrafKg";
+        } else {
+            SHTRAF = "Shtraf";
+        }
 
-        langKg = findViewById(R.id.lang_kg);
-        langRu = findViewById(R.id.lang_ru);
 
-        langRu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!SHTRAF.equals("Shtraf")) {
-                    SHTRAF = "Shtraf";
-                    getData();
-                }
-                Log.d("ololo", SHTRAF);
-            }
-        });
-        langKg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!SHTRAF.equals("ShtrafKg")) {
-                    SHTRAF = "ShtrafKg";
-                    getData();
-                }
-                Log.d("ololo", SHTRAF);
-            }
-        });
 
         recyclerView = findViewById(R.id.recycler_view_shtraf);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -14,13 +14,19 @@ public class OnResultSdaKrTwoActivity extends AppCompatActivity  {
     private TextView description;
     private TextView general_provisions;
     private ModelSdaKrTwo modelSdaKrTwo;
-    private String SDAKR = "SdaKrKg";
+    private String SDAKR = "SdaKr";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_result_sda_kr_two);
+
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
+            SDAKR = "SdaKrKg";
+        } else {
+            SDAKR = "SdaKr";
+        }
 
         modelSdaKrTwo = (ModelSdaKrTwo) getIntent().getSerializableExtra(SDAKR);
         toolbar = findViewById(R.id.sda_kr_toolbar);

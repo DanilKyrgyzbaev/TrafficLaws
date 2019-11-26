@@ -28,7 +28,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
     private RecyclerView recyclerView, recyclerViewtwo , recyclerViewthree;
     private Toolbar toolbar;
     private String TAG = "tag";
-    private String SDAKR = "SdaKrKg";
+    private String SDAKR = "SdaKr";
     private ArrayList<ModelSdaKR> modelSdaKrListlist = new ArrayList<>();
     private ArrayList<ModelSdaKrTwo> modelSdaKrTwoListlist = new ArrayList<>();
     private ArrayList<ModelSdaKrThree> modelSdaKrThrees = new ArrayList<>();
@@ -42,6 +42,11 @@ public class TrafficLawsActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.ic_navigate);
         toolbar.setTitle("activity");
         toolbar.setNavigationOnClickListener(view -> TrafficLawsActivity.this.onBackPressed());
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
+            SDAKR = "SdaKrKg";
+        } else {
+            SDAKR = "SdaKr";
+        }
 
         recyclerView = findViewById(R.id.sda_kr2);
         recyclerViewtwo = findViewById(R.id.sda_kr);

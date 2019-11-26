@@ -47,6 +47,7 @@ public class OnResultFineActivity extends AppCompatActivity {
         note = findViewById(R.id.note);
         absent = findViewById(R.id.absent);
 
+
         fines.setText(modelFine.getFines());
         chast.setText(modelFine.getChast());
         fabula.setText(modelFine.getFabula());
@@ -58,8 +59,7 @@ public class OnResultFineActivity extends AppCompatActivity {
         entities.setText(modelFine.getEntities());
         category.setText(modelFine.getCategory());
         note.setText(modelFine.getNote());
-        absent.setText(modelFine.getAbsent());
-
+        absent.setText(modelFine.getAbsent().replaceAll("xx", System.getProperty("line.separator")));
 
         toolbar = findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_navigate);

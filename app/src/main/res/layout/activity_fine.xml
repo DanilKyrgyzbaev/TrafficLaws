@@ -39,34 +39,11 @@
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="normal"
+                    app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
-                <TextView
-                    android:id="@+id/lang_kg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:textSize="16sp"
-                    app:layout_constraintLeft_toRightOf="@id/toolbar_title"
-                    app:layout_constraintBottom_toBottomOf="@id/toolbar_title"
-                    android:text="Kg"
-                    android:layout_marginLeft="16dp"/>
-
-                <TextView
-                    android:id="@+id/lang_ru"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:textSize="16sp"
-                    app:layout_constraintLeft_toRightOf="@id/lang_kg"
-                    app:layout_constraintBottom_toBottomOf="@id/toolbar_title"
-                    android:layout_marginLeft="16dp"
-                    android:text="Ru"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
         </androidx.appcompat.widget.Toolbar>
 

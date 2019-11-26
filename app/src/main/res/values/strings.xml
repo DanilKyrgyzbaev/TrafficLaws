@@ -1,21 +1,22 @@
 <resources>
-    <string name="app_name">Traffic Laws</string>
+    <string name="app_name" translatable="false">Traffic Laws</string>
     <string name="pdd">ПДД и Штрафы КР</string>
     <string name="fines">Штрафы</string>
     <string name="trafficLaws">ПДД</string>
     <string name="callcentre">Телефоны и связи</string>
     <string name="addition">Дополнение</string>
-    <string name="car_insurance">Страхование ТС</string>
-    <string name="auto_news_cr">Автоновости КР</string>
+    <string name="car_insurance" translatable="false">Страхование ТС</string>
+    <string name="auto_news_cr" translatable="false">Автоновости КР</string>
     <string name="gas_station_prices">Цены на Азс</string>
     <string name="shtrafy">Штрафы</string>
-    <string name="statya">(В редакции постановлений Правительства КР от 3 марта 2009 года N 136, 28 мая 2012 года N 329, 27 сентября 2012 года N 656, 20 октября 2015 года № 714, 16 января 2016 года № 9, 25 декабря 2017 года № 833, 7 октября 2019 года № 522 , 31 октября 2019 года № 588 )</string>
-    <string name="extronyecall">Экстронные службы</string>
-    <string name="reder">Пожарная служба</string>
-    <string name="chast">Часть %s</string>
-    <string name="polisya">Милиция</string>
-    <string name="medical"><![CDATA[<<Медикал Сервис>> частная медицинская служба]]></string>
-    <string name="description_gazprom">Тут представлены текущие цены на бензин, на газ, и дизельное топливо.</string>
-    <string name="gazprom_neft">Газпром нефть Азия</string>
-    <string name="_1_24">База данных на сервере обновляться 1 раз в течение 24 часов согласно данным, приведенным на официальных сайтах автозаправочных компании</string>
+    <string name="statya" translatable="false">(В редакции постановлений Правительства КР от 3 марта 2009 года N 136, 28 мая 2012 года N 329, 27 сентября 2012 года N 656, 20 октября 2015 года № 714, 16 января 2016 года № 9, 25 декабря 2017 года № 833, 7 октября 2019 года № 522 , 31 октября 2019 года № 588 )</string>
+    <string name="extronyecall" translatable="false">Экстронные службы</string>
+    <string name="reder" translatable="false">Пожарная служба</string>
+    <string name="chast" translatable="false">Часть %s</string>
+    <string name="polisya" translatable="false">Милиция</string>
+    <string name="medical" translatable="false"><![CDATA[<<Медикал Сервис>> частная медицинская служба]]></string>
+    <string name="description_gazprom" translatable="false">Тут представлены текущие цены на бензин, на газ, и дизельное топливо.</string>
+    <string name="gazprom_neft" translatable="false">Газпром нефть Азия</string>
+    <string name="_1_24" translatable="false">База данных на сервере обновляться 1 раз в течение 24 часов согласно данным, приведенным на официальных сайтах автозаправочных компании</string>
+    <string name="kg_menu" translatable="false">kg</string>
 </resources>
