@@ -61,3 +61,4 @@ public class FineAdapter extends RecyclerView.Adapter<FineAdapter.ViewHolder> {
         }
     }
 }
+

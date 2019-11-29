@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="arraytwo" >
+                    <item>до 5 лет</item>
+        <item>от 5 до 10 лет</item>
+        <item>от 10 до 15 лет</item>
+        <item>свыше 15 лет</item>
+    </string-array>
+</resources>

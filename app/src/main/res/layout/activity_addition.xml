@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".activity.AdditionActivity">
     <com.google.android.material.appbar.AppBarLayout
@@ -35,9 +35,254 @@
 
         </androidx.appcompat.widget.Toolbar>
 
-
-
-
     </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/app_bar_layout">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:hint="Расчет налога на имущество 4 гурпы"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:hint="(транспортные средства)"
+                android:layout_marginStart="16dp"
+                android:gravity="center"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintTop_toBottomOf="@id/text"/>
+
+            <View
+                android:id="@+id/viewone"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/black"
+                android:elevation="1dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/text1"/>
+
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="1. Выбирите вид транспорта:"
+                app:layout_constraintTop_toBottomOf="@id/text1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp" />
+
+            <Spinner
+                android:id="@+id/spiner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/text2"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <View
+                android:id="@+id/viewtwo"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/black"
+                android:elevation="1dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/spiner"/>
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/spiner"
+                android:textStyle="normal"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:hint="2. Выбирите срок эксплуатации (Выключая год выпуска заводом- изготовителем):"/>
+
+            <Spinner
+                android:id="@+id/spinertwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/text3"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <View
+                android:id="@+id/viewthree"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/black"
+                android:elevation="1dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/spinertwo"/>
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/viewthree"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:hint="3. Введите объем(см3):"/>
+
+            <EditText
+                android:id="@+id/edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/text4"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"/>
+
+            <View
+                android:id="@+id/viewfo"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/black"
+                android:elevation="1dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/edittext"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cornerRadius="10dp"
+                app:elevation="10dp"
+                app:layout_constraintTop_toBottomOf="@id/viewfo"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:text="РАССЧИТАТЬ:"
+                android:background="@drawable/background_buttontwo"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/button"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:hint="Итого:"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/text5"
+                app:layout_constraintTop_toBottomOf="@id/button"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="10dp"/>
+
+            <View
+                android:id="@+id/viewfif"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/black"
+                android:elevation="1dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/text6"/>
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewfif"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="16dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/text8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text7"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="16dp"
+                android:gravity="center"/>
+
+            <View
+                android:id="@+id/viewsix"
+                android:layout_width="match_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/black"
+                android:elevation="1dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/text8"/>
+
+            <TextView
+                android:id="@+id/text9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewsix"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="10dp"
+                android:text="Срок представления информационного расчета: до 1 марта - организации до 1 апреля - физические лица. Срок оплаты налога - не позднее 1 сентября текущего года."
+                android:textColor="@color/red"
+                android:textStyle="normal"
+                android:gravity="center"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 
 </LinearLayout>
