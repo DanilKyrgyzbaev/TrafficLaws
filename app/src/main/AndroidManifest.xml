@@ -31,7 +31,7 @@
             android:name=".activity.AdditionActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.CarInsuranceActivity"
+            android:name=".osago.CarInsuranceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.AutoNewsCarActivity"

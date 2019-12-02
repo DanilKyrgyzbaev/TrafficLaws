@@ -5,14 +5,9 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -23,11 +18,10 @@ import com.pdd.trafficlaws.R;
 import com.pdd.trafficlaws.callcentre.activity.CallCentreActivity;
 import com.pdd.trafficlaws.fine.FineActivity;
 import com.pdd.trafficlaws.gasStationPrices.GasStationPricesActivity;
+import com.pdd.trafficlaws.osago.CarInsuranceActivity;
 import com.pdd.trafficlaws.sdakr.TrafficLawsActivity;
 
 import java.util.Locale;
-
-import io.opencensus.resource.Resource;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -102,6 +96,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addition = findViewById(R.id.addition);
         switchCompat = findViewById(R.id.switchCompat);
         switchCompat.setChecked(getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", true));
+        if (switchCompat.isChecked()) {
+            Resources res = getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.setLocale(new Locale("ky"));
+            res.updateConfiguration(conf, dm);
+        } else {
+            Resources res = getResources();
+            DisplayMetrics dm = res.getDisplayMetrics();
+            Configuration conf = res.getConfiguration();
+            conf.setLocale(new Locale(""));
+            res.updateConfiguration(conf, dm);
+        }
     }
 
     @Override

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.pdd.trafficlaws.R;
 
 public class OnResultFineActivity extends AppCompatActivity {
-    private Toolbar toolbar;
+
     private TextView chast;
     private TextView fabula;
     private TextView statiya;
@@ -60,12 +60,11 @@ public class OnResultFineActivity extends AppCompatActivity {
         category.setText(modelFine.getCategory());
         note.setText(modelFine.getNote());
         absent.setText(modelFine.getAbsent().replaceAll("xx", System.getProperty("line.separator")));
+        // это здес бро как тебя не стыдно аа я знала как это тебя может быт тяжело как ты этого не понимаешь ты бля иди суда кодить что бы была абзас или новая строка был копия возми у меня
 
-        toolbar = findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_navigate);
-        toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+    }
 
-
+    public void onClick(View view) {
+        finish();
     }
 }

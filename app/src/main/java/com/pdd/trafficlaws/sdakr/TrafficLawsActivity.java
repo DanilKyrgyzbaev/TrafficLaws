@@ -62,17 +62,17 @@ public class TrafficLawsActivity extends AppCompatActivity {
         recyclerViewthree.setAdapter(mySdaKrAdapterThree);
         mySdaKrAdapterThree.setOnItemClickListener(position -> {
             Intent intent = new Intent(TrafficLawsActivity.this,OnResultSdaKrThreeActivity.class);
-            intent.putExtra(SDAKR,modelSdaKrThrees.get(position));
+            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
             startActivity(intent);
         });
         mySdaKrAdapterTwo.setOnItemClickListener(position -> {
             Intent intent = new Intent(TrafficLawsActivity.this,OnResultSdaKrTwoActivity.class);
-            intent.putExtra(SDAKR,modelSdaKrTwoListlist.get(position));
+            intent.putExtra("SdaKr",modelSdaKrTwoListlist.get(position));
             startActivity(intent);
         });
         mySdaKrAdapter.setOnItemClickListener(position -> {
             Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrActivity.class);
-            intent.putExtra(SDAKR, modelSdaKrListlist.get(position));
+            intent.putExtra("SdaKr", modelSdaKrListlist.get(position));
             startActivity(intent);
         });
 

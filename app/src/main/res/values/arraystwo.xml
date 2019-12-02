@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="arraytwo" >
-                    <item>до 5 лет</item>
+    <string-array name="arrayone" >
+        <item>до 5 лет</item>
         <item>от 5 до 10 лет</item>
         <item>от 10 до 15 лет</item>
         <item>свыше 15 лет</item>
+    </string-array>
+
+    <string-array name="arraytwo" >
+        <item>до 5 лет</item>
+        <item>от 5 до 10 лет</item>
+        <item>от 10 до 15 лет</item>
+        <item>свыше 15 лет</item>
+    </string-array>
+    <string-array name="arraythree" >
+        <item>до 15 лет</item>
+        <item>свыше 15 лет</item>
+    </string-array>
+    <string-array name="arrayfour" >
+        <item>до 15 лет</item>
+        <item>свыше 15 лет</item>
+    </string-array>
+    <string-array name="arrayfive" >
+        <item>до 10 лет</item>
+        <item>свыше 10 лет</item>
+    </string-array>
+    <string-array name="arraysix" >
+        <item>до 5 лет</item>
+        <item>свыше 5 лет</item>
     </string-array>
 </resources>

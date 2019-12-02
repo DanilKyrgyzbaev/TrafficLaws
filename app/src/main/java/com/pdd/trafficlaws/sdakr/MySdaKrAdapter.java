@@ -50,10 +50,6 @@ public class MySdaKrAdapter extends RecyclerView.Adapter<MySdaKrAdapter.ViewHold
 
         private TextView general_provisions;
 
-
-
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             general_provisions = itemView.findViewById(id.general_provisions);

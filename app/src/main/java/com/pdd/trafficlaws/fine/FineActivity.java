@@ -38,7 +38,6 @@ public class FineActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private CollectionReference ref;
     private RecyclerView recyclerView;
-    private Toolbar toolbar;
     private List<ModelFine> modelList = new ArrayList<>();
     private FineAdapter adapter;
 
@@ -48,10 +47,6 @@ public class FineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fine);
-        toolbar = findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_navigate);
-        toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(view -> onBackPressed());
         if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
             SHTRAF = "ShtrafKg";
         } else {
@@ -91,5 +86,8 @@ public class FineActivity extends AppCompatActivity {
             }
             adapter.notifyDataSetChanged();
         });
+    }
+    public void onClick(View view) {
+        finish();
     }
 }

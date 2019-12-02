@@ -22,11 +22,10 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:layout_marginStart="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/switchCompat"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
 
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switchCompat"
@@ -84,9 +83,8 @@
                     android:layout_marginBottom="10dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="134dp"
                     android:gravity="center"
                     android:text="@string/fines"
                     android:textSize="16sp"
@@ -121,8 +119,6 @@
                     android:layout_width="match_parent"
                     android:gravity="center"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginEnd="56dp"
                     android:text="@string/trafficLaws"
                     android:textSize="16sp"
                     android:textColor="@color/black"
@@ -152,9 +148,8 @@
                     android:layout_marginBottom="10dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="108dp"
                     android:gravity="center"
                     android:text="@string/callcentre"
                     android:textSize="16sp"
@@ -185,9 +180,8 @@
                     android:layout_marginBottom="10dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="120dp"
                     android:gravity="center"
                     android:text="@string/gas_station_prices"
                     android:textSize="16sp"
@@ -218,9 +212,8 @@
                     android:layout_marginBottom="10dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="109dp"
                     android:gravity="center"
                     android:text="@string/auto_news_cr"
                     android:textSize="16sp"
@@ -251,9 +244,8 @@
                     android:layout_marginBottom="10dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="110dp"
                     android:gravity="center"
                     android:text="@string/car_insurance"
                     android:textSize="16sp"
@@ -281,13 +273,11 @@
                     android:layout_height="match_parent"
                     app:srcCompat="@drawable/ic_more"
                     android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
                     android:layout_marginBottom="10dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="111dp"
                     android:gravity="center"
                     android:text="@string/addition"
                     android:textSize="16sp"
@@ -295,6 +285,7 @@
                     android:textStyle="normal"/>
 
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
     </ScrollView>

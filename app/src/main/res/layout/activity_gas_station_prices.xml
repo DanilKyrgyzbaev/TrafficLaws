@@ -6,34 +6,66 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".gasStationPrices.GasStationPricesActivity">
-
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:titleTextColor="#fff"
-            app:title="Face"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_navigate"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="21dp"
+            android:onClick="onClick"
+            android:layout_marginTop="16dp"/>
 
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:singleLine="true"
-                android:text="@string/gas_station_prices"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="normal" />
-        </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/gas_station_prices"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </LinearLayout>
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/app_bar_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/white"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            app:titleTextColor="#fff"-->
+<!--            app:title="Face"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/toolbar_title"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center"-->
+<!--                android:singleLine="true"-->
+<!--                android:text="@string/gas_station_prices"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="normal" />-->
+<!--        </androidx.appcompat.widget.Toolbar>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
