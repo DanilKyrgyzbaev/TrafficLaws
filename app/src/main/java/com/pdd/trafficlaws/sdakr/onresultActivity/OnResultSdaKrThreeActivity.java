@@ -1,4 +1,4 @@
-package com.pdd.trafficlaws.sdakr;
+package com.pdd.trafficlaws.sdakr.onresultActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,12 +11,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.pdd.trafficlaws.R;
+import com.pdd.trafficlaws.sdakr.model.ModelSdaKrThree;
 
-public class OnResultSdaKrTwoActivity extends AppCompatActivity  {
+public class OnResultSdaKrThreeActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView description;
     private TextView general_provisions;
-    private ModelSdaKrTwo modelSdaKrTwo;
+    private ModelSdaKrThree modelSdaKrThree;
     final static float STEP = 200;
     float mRatio = 1.0f;
     int mBaseDist;
@@ -24,12 +25,11 @@ public class OnResultSdaKrTwoActivity extends AppCompatActivity  {
     float fontsize = 13;
     private String SDAKR = "SdaKr";
 
-
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_result_sda_kr_two);
+        setContentView(R.layout.activity_on_result_sda_kr_three);
 
         if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
             SDAKR = "SdaKrKg";
@@ -37,7 +37,7 @@ public class OnResultSdaKrTwoActivity extends AppCompatActivity  {
             SDAKR = "SdaKr";
         }
 
-        modelSdaKrTwo = (ModelSdaKrTwo) getIntent().getSerializableExtra("SdaKr");
+        modelSdaKrThree= (ModelSdaKrThree) getIntent().getSerializableExtra("SdaKr");
         toolbar = findViewById(R.id.sda_kr_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_navigate);
         description = findViewById(R.id.sda_kr_on_result_text);
@@ -51,9 +51,10 @@ public class OnResultSdaKrTwoActivity extends AppCompatActivity  {
                 onBackPressed();
             }
         });
-        general_provisions.setText(modelSdaKrTwo.getGeneral_provisions());
-        description.setText(modelSdaKrTwo.getDescription());
-        description.setText(modelSdaKrTwo.getDescription().replaceAll("xx", System.getProperty("line.separator")));
+        general_provisions.setText(modelSdaKrThree.getGeneral_provisions());
+        description.setText(modelSdaKrThree.getDescription());
+        description.setText(modelSdaKrThree.getDescription().replaceAll("xx", System.getProperty("line.separator")));
+
 
         description.setOnTouchListener((v, event) -> {
             // TODO Auto-generated method stub
@@ -82,13 +83,9 @@ public class OnResultSdaKrTwoActivity extends AppCompatActivity  {
         });
 
     }
-
     private int getDistance(MotionEvent event) {
         int dx = (int) (event.getX(0) - event.getX(1));
         int dy = (int) (event.getY(0) - event.getY(1));
         return (int) (Math.sqrt(dx * dx + dy * dy));
     }
-
 }
-
-

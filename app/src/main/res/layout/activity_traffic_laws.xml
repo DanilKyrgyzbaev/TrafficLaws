@@ -97,6 +97,75 @@
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
+            <com.alespero.expandablecardview.ExpandableCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                android:background="@color/white"
+                app:expandOnClick="true"
+                app:inner_view="@layout/row_sda_kr3"
+                app:title="ПДД КР.                            Пункты 17-27.">
+
+            </com.alespero.expandablecardview.ExpandableCardView>
+
+            <com.alespero.expandablecardview.ExpandableCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                android:background="@color/white"
+                app:expandOnClick="true"
+                app:inner_view="@layout/row_sda_kr3"
+                app:title="ПДД КР.                            Пункты 17-27.">
+
+            </com.alespero.expandablecardview.ExpandableCardView>
+
+            <com.alespero.expandablecardview.ExpandableCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                android:background="@color/white"
+                app:expandOnClick="true"
+                app:inner_view="@layout/row_sda_kr3"
+                app:title="ПДД КР.                            Пункты 17-27.">
+
+            </com.alespero.expandablecardview.ExpandableCardView>
+
+            <com.alespero.expandablecardview.ExpandableCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="16dp"
+                android:background="@color/white"
+                app:expandOnClick="true"
+                app:inner_view="@layout/row_sda_kr3"
+                app:title="ПДД КР.                            Пункты 17-27.">
+
+            </com.alespero.expandablecardview.ExpandableCardView>
+
+
         </LinearLayout>
 
     </ScrollView>

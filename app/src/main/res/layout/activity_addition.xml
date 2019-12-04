@@ -7,36 +7,37 @@
     android:orientation="vertical"
     android:layout_height="wrap_content"
     tools:context=".activity.AdditionActivity">
-    <com.google.android.material.appbar.AppBarLayout
+
+    <LinearLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:titleTextColor="#fff"
-            app:title="Face"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_navigate"
+            android:onClick="onClick"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/toolbar_title"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/addition"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
 
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginStart="50dp"
-                android:singleLine="true"
-                android:text="@string/addition"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="normal" />
+    </LinearLayout>
 
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_gravity="center"

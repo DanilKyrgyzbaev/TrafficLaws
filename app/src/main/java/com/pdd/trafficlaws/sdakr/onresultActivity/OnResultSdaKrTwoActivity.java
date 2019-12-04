@@ -1,4 +1,7 @@
-package com.pdd.trafficlaws.sdakr;
+package com.pdd.trafficlaws.sdakr.onresultActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -7,17 +10,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import com.pdd.trafficlaws.R;
-//OnTouchListener
+import com.pdd.trafficlaws.sdakr.model.ModelSdaKrTwo;
 
-public class OnResultSdaKrActivity extends AppCompatActivity {
+public class OnResultSdaKrTwoActivity extends AppCompatActivity  {
     private Toolbar toolbar;
     private TextView description;
     private TextView general_provisions;
-    private ModelSdaKR modelSdaKR;
+    private ModelSdaKrTwo modelSdaKrTwo;
     final static float STEP = 200;
     float mRatio = 1.0f;
     int mBaseDist;
@@ -30,28 +30,31 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_result_sda_kr);
+        setContentView(R.layout.activity_on_result_sda_kr_two);
 
-        modelSdaKR = (ModelSdaKR) getIntent().getSerializableExtra("SdaKr");
-        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)) {
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
             SDAKR = "SdaKrKg";
         } else {
             SDAKR = "SdaKr";
         }
 
+        modelSdaKrTwo = (ModelSdaKrTwo) getIntent().getSerializableExtra("SdaKr");
         toolbar = findViewById(R.id.sda_kr_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_navigate);
         description = findViewById(R.id.sda_kr_on_result_text);
         description.setTextSize(mRatio + 15);
-        description.setText(modelSdaKR.getDescription());
-
         general_provisions = findViewById(R.id.sda_kr_on_result);
         toolbar.setCollapseContentDescription("hknglhkg;");
-        toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
-        general_provisions.setText(modelSdaKR.getGeneral_provisions());
-        description.setText(modelSdaKR.getDescription().replaceAll("xx", System.getProperty("line.separator")));
-
+//        toolbar.setTitle("activity");
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+        general_provisions.setText(modelSdaKrTwo.getGeneral_provisions());
+        description.setText(modelSdaKrTwo.getDescription());
+        description.setText(modelSdaKrTwo.getDescription().replaceAll("xx", System.getProperty("line.separator")));
 
         description.setOnTouchListener((v, event) -> {
             // TODO Auto-generated method stub
@@ -87,9 +90,6 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
         return (int) (Math.sqrt(dx * dx + dy * dy));
     }
 
-
 }
-
-
 
 

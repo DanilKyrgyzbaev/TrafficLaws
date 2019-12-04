@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView trafficLaws;
     private CardView callCentre;
     private CardView gas_station_prices;
-    private CardView auto_news_cr;
     private CardView car_insurance;
     private CardView addition;
     private SwitchCompat switchCompat;
@@ -47,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setupListeners() {
         addition.setOnClickListener(this);
         car_insurance.setOnClickListener(this);
-        auto_news_cr.setOnClickListener(this);
         gas_station_prices.setOnClickListener(this);
         callCentre.setOnClickListener(this);
         trafficLaws.setOnClickListener(this);
@@ -91,7 +89,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         trafficLaws = findViewById(R.id.trafficLaws);
         callCentre = findViewById(R.id.callCentre);
         gas_station_prices = findViewById(R.id.gas_station_prices);
-        auto_news_cr = findViewById(R.id.auto_news_cr);
         car_insurance = findViewById(R.id.car_insurance);
         addition = findViewById(R.id.addition);
         switchCompat = findViewById(R.id.switchCompat);
@@ -120,9 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.car_insurance:
                 launchActivity(CarInsuranceActivity.class);
                 break;
-            case R.id.auto_news_cr:
-                launchActivity(AutoNewsCarActivity.class);
-                break;
+
             case R.id.gas_station_prices:
                 launchActivity(GasStationPricesActivity.class);
                 break;

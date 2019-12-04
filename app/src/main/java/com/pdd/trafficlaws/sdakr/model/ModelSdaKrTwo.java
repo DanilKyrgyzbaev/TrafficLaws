@@ -1,4 +1,4 @@
-package com.pdd.trafficlaws.sdakr;
+package com.pdd.trafficlaws.sdakr.model;
 
 import java.io.Serializable;
 

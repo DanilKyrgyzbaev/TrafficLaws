@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
@@ -21,6 +22,7 @@ import com.pdd.trafficlaws.fine.FineAdapter;
 import com.pdd.trafficlaws.fine.ModelFine;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class CarInsuranceActivity extends AppCompatActivity {
@@ -30,6 +32,7 @@ public class CarInsuranceActivity extends AppCompatActivity {
     private CollectionReference ref;
     private RecyclerView recyclerView;
     private AdditionAdapter additionAdapter;
+    private TextView textView;
     private List<AdditionModel> modelList = new ArrayList<>();
 
     @Override
@@ -41,21 +44,21 @@ public class CarInsuranceActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         additionAdapter = new AdditionAdapter(this,modelList);
         recyclerView.setAdapter(additionAdapter);
+        textView = findViewById(R.id.description_osago);
+
+
         db = FirebaseFirestore.getInstance();
-        ref = db.collection("Osaga");
-        modelList.clear();
-        ref.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                for (QueryDocumentSnapshot q :queryDocumentSnapshots){
-                    AdditionModel additionModel = q.toObject(AdditionModel.class);
-                    modelList.add(additionModel);
-                }
-            }
+        ref = db.collection("Osago");
+        ref.get().addOnSuccessListener(queryDocumentSnapshots -> {
+            Log.e("ololo",  "");
+            modelList.clear();
+            modelList.addAll(queryDocumentSnapshots.toObjects(AdditionModel.class));
+            additionAdapter.notifyDataSetChanged();
         });
+
     }
 
     public void onClick(View view) {
-        finish();
+        onBackPressed();
     }
 }

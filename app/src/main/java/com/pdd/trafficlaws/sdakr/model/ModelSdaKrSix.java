@@ -1,13 +1,11 @@
-package com.pdd.trafficlaws.sdakr;
+package com.pdd.trafficlaws.sdakr.model;
 
-import java.io.Serializable;
-
-public class ModelSdaKrThree implements Serializable {
+public class ModelSdaKrSix {
     private String general_provisions;
     private String description;
     private long order;
 
-    public ModelSdaKrThree() {
+    public ModelSdaKrSix() {
     }
 
     public String getGeneral_provisions() {

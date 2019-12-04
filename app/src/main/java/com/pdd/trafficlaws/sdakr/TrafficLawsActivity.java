@@ -16,6 +16,16 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.pdd.trafficlaws.R;
+import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapter;
+import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapterThree;
+import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapterTwo;
+import com.pdd.trafficlaws.sdakr.model.ModelSdaKR;
+import com.pdd.trafficlaws.sdakr.model.ModelSdaKrThree;
+import com.pdd.trafficlaws.sdakr.model.ModelSdaKrTwo;
+import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrActivity;
+import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrThreeActivity;
+import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrTwoActivity;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 
@@ -61,12 +71,12 @@ public class TrafficLawsActivity extends AppCompatActivity {
         recyclerViewtwo.setAdapter(mySdaKrAdapterTwo);
         recyclerViewthree.setAdapter(mySdaKrAdapterThree);
         mySdaKrAdapterThree.setOnItemClickListener(position -> {
-            Intent intent = new Intent(TrafficLawsActivity.this,OnResultSdaKrThreeActivity.class);
+            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrThreeActivity.class);
             intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
             startActivity(intent);
         });
         mySdaKrAdapterTwo.setOnItemClickListener(position -> {
-            Intent intent = new Intent(TrafficLawsActivity.this,OnResultSdaKrTwoActivity.class);
+            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrTwoActivity.class);
             intent.putExtra("SdaKr",modelSdaKrTwoListlist.get(position));
             startActivity(intent);
         });

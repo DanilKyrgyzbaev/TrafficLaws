@@ -56,7 +56,7 @@ public class AdditionAdapter extends RecyclerView.Adapter<AdditionAdapter.ViewHo
         }
         void  bind (AdditionModel additionModel){
             name.setText(additionModel.getName());
-            description.setText(additionModel.getDescription());
+            description.setText(additionModel.getDescription().replaceAll("xx", System.getProperty("line.separator")));
 
         }
     }

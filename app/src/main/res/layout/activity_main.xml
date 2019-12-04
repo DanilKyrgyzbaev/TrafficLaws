@@ -190,37 +190,7 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/auto_news_cr"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@color/white"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/gas_station_prices"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="24dp">
 
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/ic_newspaper"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="10dp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="@string/auto_news_cr"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:textStyle="normal"/>
-
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/car_insurance"
@@ -229,7 +199,7 @@
                 android:background="@color/white"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/auto_news_cr"
+                app:layout_constraintTop_toBottomOf="@+id/gas_station_prices"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="24dp">

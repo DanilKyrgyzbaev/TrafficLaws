@@ -4,7 +4,7 @@
     package="com.pdd.trafficlaws">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
 
     <application
@@ -15,15 +15,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".gasStationPrices.GazpromNeftAsialActivity">
+        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrSevenActivity"></activity>
+        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrSixActivity" />
+        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrFifActivity" />
+        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrFoActivity" />
+        <activity
+            android:name=".activity.LauncherActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity
-            android:name=".sdakr.OnResultSdaKrThreeActivity" />
-        <activity
-            android:name=".sdakr.OnResultSdaKrTwoActivity" />
-        <activity
-            android:name=".sdakr.OnResultSdaKrActivity" />
+        <activity android:name=".gasStationPrices.GazpromNeftAsialActivity" />
+        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrThreeActivity" />
+        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrTwoActivity" />
+        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrActivity" />
         <activity
             android:name=".fine.OnResultFineActivity"
             android:screenOrientation="portrait" />
@@ -34,9 +42,6 @@
             android:name=".osago.CarInsuranceActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.AutoNewsCarActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".gasStationPrices.GasStationPricesActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -44,20 +49,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".sdakr.TrafficLawsActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".fine.FineActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.SplashScreen"
-            android:screenOrientation="portrait"
-            android:theme="@style/SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait"

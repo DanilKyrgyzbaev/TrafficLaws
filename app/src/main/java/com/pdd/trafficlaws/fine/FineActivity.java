@@ -80,10 +80,6 @@ public class FineActivity extends AppCompatActivity {
             modelList.clear();
             modelList.addAll(queryDocumentSnapshots.toObjects(ModelFine.class));
             modelList.sort(Comparator.comparing(ModelFine::getOrder));
-            Log.e(TAG, "onSuccess: ");
-            for (ModelFine m : modelList) {
-
-            }
             adapter.notifyDataSetChanged();
         });
     }

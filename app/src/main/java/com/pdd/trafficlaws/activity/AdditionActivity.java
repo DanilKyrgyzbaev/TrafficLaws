@@ -2,14 +2,9 @@ package com.pdd.trafficlaws.activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,31 +13,19 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.pdd.trafficlaws.R;
-import com.pdd.trafficlaws.fine.FineActivity;
-import com.pdd.trafficlaws.fine.FineAdapter;
-import com.pdd.trafficlaws.fine.ModelFine;
-import com.pdd.trafficlaws.fine.OnResultFineActivity;
-import com.pdd.trafficlaws.osago.AdditionAdapter;
-import com.pdd.trafficlaws.osago.AdditionModel;
-
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 
 public class AdditionActivity extends AppCompatActivity {
 
     private static final String TAG = "tag";
-    private Toolbar toolbar;
+
     private Button calculate;
     private TextView result;
     private EditText editText;
 
 
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,10 +87,7 @@ public class AdditionActivity extends AppCompatActivity {
             }
         });
 
-        toolbar = findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_navigate);
-        toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(view -> onBackPressed());
+
 
         calculate.setOnClickListener(v -> {
             if (editText.getText().toString().isEmpty()){
@@ -119,72 +99,72 @@ public class AdditionActivity extends AppCompatActivity {
                     case 0:
                         switch (spinnertwo.getSelectedItemPosition()) {
                             case 0:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.90 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.90 + " сом");
                                 break;
                             case 1:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.75 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.75 + " сом");
                                 break;
                             case 2:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.60 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.60 + " сом");
                                 break;
                             case 3:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.45 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.45 + " сом");
                                 break;
                         }
                         break;
                     case 1:
                         switch (spinnertwo.getSelectedItemPosition()) {
                             case 0:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.75 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.75 + " сом");
                                 break;
                             case 1:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.60 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.60 + " сом");
                                 break;
                             case 2:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.45 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.45 + " сом");
                                 break;
                             case 3:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.30 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.30 + " сом");
                                 break;
                         }
                         break;
                     case 2:
                         switch (spinnertwo.getSelectedItemPosition()) {
                             case 0:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.30 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.30 + " сом");
                                 break;
                             case 1:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.15 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.15 + " сом");
                                 break;
                         }
                         break;
                     case 3:
                         switch (spinnertwo.getSelectedItemPosition()) {
                             case 0:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.10 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.10 + " сом");
                                 break;
                             case 1:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.05 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.05 + " сом");
                                 break;
                         }
                         break;
                     case 4:
                         switch (spinnertwo.getSelectedItemPosition()) {
                             case 0:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.15 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.15 + " сом");
                                 break;
                             case 1:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 0.09 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 0.09 + " сом");
                                 break;
                         }
                         break;
                     case 5:
                         switch (spinnertwo.getSelectedItemPosition()) {
                             case 0:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 1.8 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 1.8 + " сом");
                                 break;
                             case 1:
-                                result.setText(String.valueOf(Double.parseDouble(editText.getText().toString()) * 1.2 + " сом"));
+                                result.setText(Double.parseDouble(editText.getText().toString()) * 1.2 + " сом");
                                 break;
                         }
                         break;
@@ -194,4 +174,7 @@ public class AdditionActivity extends AppCompatActivity {
 
     }
 
+    public void onClick(View view) {
+        onBackPressed();
+    }
 }

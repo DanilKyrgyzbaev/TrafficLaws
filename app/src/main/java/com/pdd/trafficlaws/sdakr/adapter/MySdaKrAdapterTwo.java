@@ -1,4 +1,4 @@
-package com.pdd.trafficlaws.sdakr;
+package com.pdd.trafficlaws.sdakr.adapter;
 
  import android.content.Context;
  import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ package com.pdd.trafficlaws.sdakr;
  import androidx.annotation.NonNull;
  import androidx.recyclerview.widget.RecyclerView;
  import com.pdd.trafficlaws.OnItemClickListener;
+ import com.pdd.trafficlaws.sdakr.model.ModelSdaKrTwo;
+
  import java.util.List;
  import static com.pdd.trafficlaws.R.*;
 

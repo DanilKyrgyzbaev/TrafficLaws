@@ -1,22 +1,23 @@
-package com.pdd.trafficlaws.sdakr;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+package com.pdd.trafficlaws.sdakr.onresultActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.TextView;
 
-import com.pdd.trafficlaws.R;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
-public class OnResultSdaKrThreeActivity extends AppCompatActivity {
+import com.pdd.trafficlaws.R;
+import com.pdd.trafficlaws.sdakr.model.ModelSdaKR;
+//OnTouchListener
+
+public class OnResultSdaKrActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TextView description;
     private TextView general_provisions;
-    private ModelSdaKrThree modelSdaKrThree;
+    private ModelSdaKR modelSdaKR;
     final static float STEP = 200;
     float mRatio = 1.0f;
     int mBaseDist;
@@ -24,35 +25,32 @@ public class OnResultSdaKrThreeActivity extends AppCompatActivity {
     float fontsize = 13;
     private String SDAKR = "SdaKr";
 
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_result_sda_kr_three);
+        setContentView(R.layout.activity_on_result_sda_kr);
 
-        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
+        modelSdaKR = (ModelSdaKR) getIntent().getSerializableExtra("SdaKr");
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)) {
             SDAKR = "SdaKrKg";
         } else {
             SDAKR = "SdaKr";
         }
 
-        modelSdaKrThree= (ModelSdaKrThree) getIntent().getSerializableExtra("SdaKr");
         toolbar = findViewById(R.id.sda_kr_toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_navigate);
         description = findViewById(R.id.sda_kr_on_result_text);
         description.setTextSize(mRatio + 15);
+        description.setText(modelSdaKR.getDescription());
+
         general_provisions = findViewById(R.id.sda_kr_on_result);
         toolbar.setCollapseContentDescription("hknglhkg;");
-//        toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-        general_provisions.setText(modelSdaKrThree.getGeneral_provisions());
-        description.setText(modelSdaKrThree.getDescription());
-        description.setText(modelSdaKrThree.getDescription().replaceAll("xx", System.getProperty("line.separator")));
+        toolbar.setTitle("activity");
+        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+        general_provisions.setText(modelSdaKR.getGeneral_provisions());
+        description.setText(modelSdaKR.getDescription().replaceAll("xx", System.getProperty("line.separator")));
 
 
         description.setOnTouchListener((v, event) -> {
@@ -82,9 +80,16 @@ public class OnResultSdaKrThreeActivity extends AppCompatActivity {
         });
 
     }
+
     private int getDistance(MotionEvent event) {
         int dx = (int) (event.getX(0) - event.getX(1));
         int dy = (int) (event.getY(0) - event.getY(1));
         return (int) (Math.sqrt(dx * dx + dy * dy));
     }
+
+
 }
+
+
+
+

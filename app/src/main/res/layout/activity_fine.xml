@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".fine.FineActivity">
+
 
     <LinearLayout
         android:id="@+id/app_bar_layout"
@@ -43,13 +44,13 @@
 
     <TextView
         android:id="@+id/obnof"
-        android:layout_width="373dp"
-        android:layout_height="95dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:gravity="center_horizontal"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:textColor="@color/black"
         android:textStyle="normal"
         android:textSize="14sp"

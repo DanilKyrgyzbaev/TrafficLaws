@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class AdditionModel implements Serializable {
     private String name;
-    private String description;
+    private  String  description;
 
     public AdditionModel() {
     }
@@ -19,7 +19,7 @@ public class AdditionModel implements Serializable {
         this.name = name;
     }
 
-    public String getDescription() {
+    public String  getDescription() {
         return description;
     }
 
