@@ -2,7 +2,7 @@
 <resources>
     <string name="fines">Айып пул</string>
     <string name="trafficLaws">ЖКЭ</string>
-    <string name="shtrafy">Айып пул</string>
+    <string name="shtrafy">Айып беренелери</string>
     <string name="gas_station_prices">Күйүүчү май баасы</string>
     <string name="callcentre">Байланыш телефондору</string>
     <string name="addition">Кошумча маалыматар</string>

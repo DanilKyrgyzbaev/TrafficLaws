@@ -7,35 +7,38 @@
     android:orientation="vertical"
     tools:context=".sdakr.TrafficLawsActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <LinearLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            app:titleTextColor="#fff"
-            app:title="Face"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_navigate"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="21dp"
+            android:onClick="onClick"
+            android:layout_marginTop="16dp"/>
 
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:singleLine="true"
-                android:text="@string/trafficLaws"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="normal" />
+        <TextView
+            android:id="@+id/sda_kr_on_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:singleLine="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/shtrafy"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="normal" />
 
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -59,7 +62,7 @@
                 android:background="@color/white"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr"
-                app:title="ПДД КР.                            Пункты 1-8.">
+                app:title="ПДД КР.                            Пункты 1-4.">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -76,7 +79,7 @@
                 app:cardElevation="16dp"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr2"
-                app:title="ПДД КР.                            Пункты 9-16.">
+                app:title="ПДД КР.                            Пункты 5-8.">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -93,7 +96,7 @@
                 android:background="@color/white"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr3"
-                app:title="ПДД КР.                            Пункты 17-27.">
+                app:title="ПДД КР.                            Пункты 9-12.">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -109,8 +112,8 @@
                 app:cardElevation="16dp"
                 android:background="@color/white"
                 app:expandOnClick="true"
-                app:inner_view="@layout/row_sda_kr3"
-                app:title="ПДД КР.                            Пункты 17-27.">
+                app:inner_view="@layout/row_sda_kr4"
+                app:title="ПДД КР.                            Пункты 13-16.">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -126,8 +129,8 @@
                 app:cardElevation="16dp"
                 android:background="@color/white"
                 app:expandOnClick="true"
-                app:inner_view="@layout/row_sda_kr3"
-                app:title="ПДД КР.                            Пункты 17-27.">
+                app:inner_view="@layout/row_sda_kr5"
+                app:title="ПДД КР.                            Пункты 17-20.">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -143,8 +146,8 @@
                 app:cardElevation="16dp"
                 android:background="@color/white"
                 app:expandOnClick="true"
-                app:inner_view="@layout/row_sda_kr3"
-                app:title="ПДД КР.                            Пункты 17-27.">
+                app:inner_view="@layout/row_sda_kr6"
+                app:title="ПДД КР.                            Пункты 21-24.">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -160,8 +163,8 @@
                 app:cardElevation="16dp"
                 android:background="@color/white"
                 app:expandOnClick="true"
-                app:inner_view="@layout/row_sda_kr3"
-                app:title="ПДД КР.                            Пункты 17-27.">
+                app:inner_view="@layout/row_sda_kr7"
+                app:title="ПДД КР.                            Пункты 25-27.">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 

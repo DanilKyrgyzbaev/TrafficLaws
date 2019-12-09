@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name" translatable="false">Traffic Laws</string>
+    <string name="app_name" translatable="false">ПДД КР</string>
     <string name="pdd">ПДД и Штрафы КР</string>
     <string name="fines">Штрафы</string>
     <string name="trafficLaws">ПДД</string>

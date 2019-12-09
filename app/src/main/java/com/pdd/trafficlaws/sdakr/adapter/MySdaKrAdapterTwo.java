@@ -9,17 +9,17 @@ package com.pdd.trafficlaws.sdakr.adapter;
  import androidx.annotation.NonNull;
  import androidx.recyclerview.widget.RecyclerView;
  import com.pdd.trafficlaws.OnItemClickListener;
- import com.pdd.trafficlaws.sdakr.model.ModelSdaKrTwo;
+ import com.pdd.trafficlaws.sdakr.model.ModelSdaKR;
 
  import java.util.List;
  import static com.pdd.trafficlaws.R.*;
 
 public class MySdaKrAdapterTwo extends RecyclerView.Adapter<MySdaKrAdapterTwo.ViewHolder> {
     private Context context;
-    private List<ModelSdaKrTwo> modelSdaKrTwos;
+    private List<ModelSdaKR> modelSdaKrTwos;
     private OnItemClickListener onItemClickListener;
 
-    public MySdaKrAdapterTwo(Context context,List<ModelSdaKrTwo>list){
+    public MySdaKrAdapterTwo(Context context,List<ModelSdaKR>list){
         this.context = context;
         this.modelSdaKrTwos = list;
     }
@@ -52,23 +52,15 @@ public class MySdaKrAdapterTwo extends RecyclerView.Adapter<MySdaKrAdapterTwo.Vi
 
         private TextView general_provisions;
 
-
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             general_provisions = itemView.findViewById(id.general_provisions);
 //            description = find
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onItemClickListener.onItemClickListener(getAdapterPosition());
-                }
-            });
+            itemView.setOnClickListener(view -> onItemClickListener.onItemClickListener(getAdapterPosition()));
         }
 
-        void bind(ModelSdaKrTwo modelSdaKR) {
+        void bind(ModelSdaKR modelSdaKR) {
             general_provisions.setText(modelSdaKR.getGeneral_provisions());
 
         }

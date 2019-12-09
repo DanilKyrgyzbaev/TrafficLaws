@@ -21,7 +21,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class GazpromNeftAsialActivity extends AppCompatActivity {
-    private ImageView imageView;
     private TextView ai98;
     private TextView ai95;
     private TextView ai92;

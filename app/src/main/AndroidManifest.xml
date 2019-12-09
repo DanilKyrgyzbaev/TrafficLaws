@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrSevenActivity"></activity>
+        <activity android:name=".gasStationPrices.BishkekPetroliumActivity"></activity>
+        <activity android:name=".sdakr.onresultActivity.OnResultSdaKrSevenActivity" />
         <activity android:name=".sdakr.onresultActivity.OnResultSdaKrSixActivity" />
         <activity android:name=".sdakr.onresultActivity.OnResultSdaKrFifActivity" />
         <activity android:name=".sdakr.onresultActivity.OnResultSdaKrFoActivity" />

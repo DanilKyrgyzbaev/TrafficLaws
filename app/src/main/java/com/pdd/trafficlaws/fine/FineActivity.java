@@ -31,9 +31,6 @@ public class FineActivity extends AppCompatActivity {
     private String SHTRAF;
     private final String ORDER = "order";
     private String TAG = "tag";
-    private TextView langRu;
-    private TextView langKg;
-    private TextView absent;
 
     private FirebaseFirestore db;
     private CollectionReference ref;

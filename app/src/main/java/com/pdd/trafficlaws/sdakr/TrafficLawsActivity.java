@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +18,18 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.pdd.trafficlaws.R;
 import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapter;
+import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapterFif;
+import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapterFo;
+import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapterSeven;
+import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapterSix;
 import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapterThree;
 import com.pdd.trafficlaws.sdakr.adapter.MySdaKrAdapterTwo;
 import com.pdd.trafficlaws.sdakr.model.ModelSdaKR;
-import com.pdd.trafficlaws.sdakr.model.ModelSdaKrThree;
-import com.pdd.trafficlaws.sdakr.model.ModelSdaKrTwo;
 import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrActivity;
+import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrFifActivity;
+import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrFoActivity;
+import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrSevenActivity;
+import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrSixActivity;
 import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrThreeActivity;
 import com.pdd.trafficlaws.sdakr.onresultActivity.OnResultSdaKrTwoActivity;
 
@@ -30,75 +37,58 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class TrafficLawsActivity extends AppCompatActivity {
-    private FirebaseFirestore firebaseFirestore;
-    private CollectionReference collectionReference;
-    private MySdaKrAdapter mySdaKrAdapter;
-    private MySdaKrAdapterTwo mySdaKrAdapterTwo;
-    private MySdaKrAdapterThree mySdaKrAdapterThree;
-    private RecyclerView recyclerView, recyclerViewtwo , recyclerViewthree;
-    private Toolbar toolbar;
     private String TAG = "tag";
     private String SDAKR = "SdaKr";
+    private FirebaseFirestore firebaseFirestore;
+    private CollectionReference collectionReference;
     private ArrayList<ModelSdaKR> modelSdaKrListlist = new ArrayList<>();
-    private ArrayList<ModelSdaKrTwo> modelSdaKrTwoListlist = new ArrayList<>();
-    private ArrayList<ModelSdaKrThree> modelSdaKrThrees = new ArrayList<>();
+    private ArrayList<ModelSdaKR> modelSdaKrTwoListlist = new ArrayList<>();
+    private ArrayList<ModelSdaKR> modelSdaKrThrees = new ArrayList<>();
+    private ArrayList<ModelSdaKR> modelSdaKrFoArrayList = new ArrayList<>();
+    private ArrayList<ModelSdaKR> modelSdaKrFifArrayList = new ArrayList<>();
+    private ArrayList<ModelSdaKR> modelSdaKrSixArrayList = new ArrayList<>();
+    private ArrayList<ModelSdaKR> modelSdaKrSevenArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traffic_laws);
 
-        toolbar = findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_navigate);
-        toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(view -> TrafficLawsActivity.this.onBackPressed());
+
+
         if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
             SDAKR = "SdaKrKg";
         } else {
             SDAKR = "SdaKr";
         }
 
-        recyclerView = findViewById(R.id.sda_kr2);
-        recyclerViewtwo = findViewById(R.id.sda_kr);
-        recyclerViewthree = findViewById(R.id.sda_kr3);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        collectionReference = firebaseFirestore.collection(SDAKR);
+
+        one();
+        two();
+        three();
+        four();
+        five();
+        six();
+        seven();
+
+    }
+
+
+
+    private void one (){
+        RecyclerView recyclerView = findViewById(R.id.sda_kr);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewtwo.setLayoutManager(new LinearLayoutManager(this));
-        recyclerViewthree.setLayoutManager(new LinearLayoutManager(this));
-        mySdaKrAdapter = new MySdaKrAdapter(this, modelSdaKrListlist);
-        mySdaKrAdapterTwo = new MySdaKrAdapterTwo(this,modelSdaKrTwoListlist);
-        mySdaKrAdapterThree = new MySdaKrAdapterThree(this,modelSdaKrThrees);
+        MySdaKrAdapter mySdaKrAdapter = new MySdaKrAdapter(this, modelSdaKrListlist);
         recyclerView.setAdapter(mySdaKrAdapter);
-        recyclerViewtwo.setAdapter(mySdaKrAdapterTwo);
-        recyclerViewthree.setAdapter(mySdaKrAdapterThree);
-        mySdaKrAdapterThree.setOnItemClickListener(position -> {
-            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrThreeActivity.class);
-            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
-            startActivity(intent);
-        });
-        mySdaKrAdapterTwo.setOnItemClickListener(position -> {
-            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrTwoActivity.class);
-            intent.putExtra("SdaKr",modelSdaKrTwoListlist.get(position));
-            startActivity(intent);
-        });
+
         mySdaKrAdapter.setOnItemClickListener(position -> {
             Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrActivity.class);
             intent.putExtra("SdaKr", modelSdaKrListlist.get(position));
             startActivity(intent);
         });
-
-        firebaseFirestore = FirebaseFirestore.getInstance();
-        collectionReference = firebaseFirestore.collection(SDAKR);
-
-        collectionReference.whereLessThan("order", 9).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                modelSdaKrTwoListlist.clear();
-                modelSdaKrTwoListlist.addAll(queryDocumentSnapshots.toObjects(ModelSdaKrTwo.class));
-                modelSdaKrTwoListlist.sort(Comparator.comparing(ModelSdaKrTwo::getOrder));
-            }
-        });
-        collectionReference.whereGreaterThan("order",8).whereLessThan("order", 17).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        collectionReference.whereLessThan("order", 5).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -109,15 +99,135 @@ public class TrafficLawsActivity extends AppCompatActivity {
                 mySdaKrAdapter.notifyDataSetChanged();
             }
         });
-        collectionReference.whereGreaterThan("order",16).whereLessThan("order",28).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+    }
+//collectionReference.whereLessThan("order", 5).get().addOnSuccessListener
+    private void two (){
+        RecyclerView recyclerViewtwo = findViewById(R.id.sda_kr2);
+        recyclerViewtwo.setLayoutManager(new LinearLayoutManager(this));
+        MySdaKrAdapterTwo mySdaKrAdapterTwo = new MySdaKrAdapterTwo(this, modelSdaKrTwoListlist);
+        recyclerViewtwo.setAdapter(mySdaKrAdapterTwo);
+        mySdaKrAdapterTwo.setOnItemClickListener(position -> {
+            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrTwoActivity.class);
+            intent.putExtra("SdaKr",modelSdaKrTwoListlist.get(position));
+            startActivity(intent);
+        });
+        collectionReference.whereGreaterThan("order",4).whereLessThan("order", 9).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                modelSdaKrTwoListlist.clear();
+                modelSdaKrTwoListlist.addAll(queryDocumentSnapshots.toObjects(ModelSdaKR.class));
+                modelSdaKrTwoListlist.sort(Comparator.comparing(ModelSdaKR::getOrder));
+            }
+        });
+
+    }
+    private void three (){
+        RecyclerView recyclerViewthree = findViewById(R.id.sda_kr3);
+        recyclerViewthree.setLayoutManager(new LinearLayoutManager(this));
+        MySdaKrAdapterThree mySdaKrAdapterThree = new MySdaKrAdapterThree(this, modelSdaKrThrees);
+        recyclerViewthree.setAdapter(mySdaKrAdapterThree);
+        mySdaKrAdapterThree.setOnItemClickListener(position -> {
+            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrThreeActivity.class);
+            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            startActivity(intent);
+        });
+        collectionReference.whereGreaterThan("order",8).whereLessThan("order",13).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 modelSdaKrThrees.clear();
-                modelSdaKrThrees.addAll(queryDocumentSnapshots.toObjects(ModelSdaKrThree.class));
-                modelSdaKrThrees.sort(Comparator.comparing(ModelSdaKrThree::getOrder));
+                modelSdaKrThrees.addAll(queryDocumentSnapshots.toObjects(ModelSdaKR.class));
+                modelSdaKrThrees.sort(Comparator.comparing(ModelSdaKR::getOrder));
                 Log.e(TAG, modelSdaKrThrees.toString() );
             }
         });
+
+    }
+    private void four (){
+        RecyclerView recyclerViewFo = findViewById(R.id.sda_kr4);
+        recyclerViewFo.setLayoutManager(new LinearLayoutManager(this));
+        MySdaKrAdapterFo mySdaKrAdapterFo = new MySdaKrAdapterFo(this,modelSdaKrFoArrayList);
+        recyclerViewFo.setAdapter(mySdaKrAdapterFo);
+        mySdaKrAdapterFo.setOnItemClickListener(position -> {
+            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrFoActivity.class);
+            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            startActivity(intent);
+        });
+        collectionReference.whereGreaterThan("order",12).whereLessThan("order",17).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                modelSdaKrFoArrayList.clear();
+                modelSdaKrFoArrayList.addAll(queryDocumentSnapshots.toObjects(ModelSdaKR.class));
+                modelSdaKrFoArrayList.sort(Comparator.comparing(ModelSdaKR::getOrder));
+            }
+        });
+    }
+    private void five (){
+        RecyclerView recyclerViewFif = findViewById(R.id.sda_kr5);
+        recyclerViewFif.setLayoutManager(new LinearLayoutManager(this));
+        MySdaKrAdapterFif mySdaKrAdapterFif = new MySdaKrAdapterFif(this,modelSdaKrFifArrayList);
+        recyclerViewFif.setAdapter(mySdaKrAdapterFif);
+        mySdaKrAdapterFif.setOnItemClickListener(position -> {
+            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrFifActivity.class);
+            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            startActivity(intent);
+        });
+        collectionReference.whereGreaterThan("order",16).whereLessThan("order",21).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                modelSdaKrFifArrayList.clear();
+                modelSdaKrFifArrayList.addAll(queryDocumentSnapshots.toObjects(ModelSdaKR.class));
+                modelSdaKrFifArrayList.sort(Comparator.comparing(ModelSdaKR::getOrder));
+            }
+        });
+
+    }
+    private void six () {
+        RecyclerView recyclerViewSix = findViewById(R.id.sda_kr6);
+        recyclerViewSix.setLayoutManager(new LinearLayoutManager(this));
+        MySdaKrAdapterSix mySdaKrAdapterSix = new MySdaKrAdapterSix(this,modelSdaKrSixArrayList);
+        recyclerViewSix.setAdapter(mySdaKrAdapterSix);
+        mySdaKrAdapterSix.setOnItemClickListener(position -> {
+            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrSixActivity.class);
+            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            startActivity(intent);
+        });
+        collectionReference.whereGreaterThan("order",20).whereLessThan("order",25).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                modelSdaKrSixArrayList.clear();
+                modelSdaKrSixArrayList.addAll(queryDocumentSnapshots.toObjects(ModelSdaKR.class));
+                modelSdaKrSixArrayList.sort(Comparator.comparing(ModelSdaKR::getOrder));
+            }
+        });
+
+    }
+    private void seven (){
+        RecyclerView recyclerViewSeven = findViewById(R.id.sda_kr7);
+        recyclerViewSeven.setLayoutManager(new LinearLayoutManager(this));
+        MySdaKrAdapterSeven mySdaKrAdapterSeven = new MySdaKrAdapterSeven(this,modelSdaKrSevenArrayList);
+        recyclerViewSeven.setAdapter(mySdaKrAdapterSeven);
+        mySdaKrAdapterSeven.setOnItemClickListener(position -> {
+            Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrSevenActivity.class);
+            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            startActivity(intent);
+        });
+        collectionReference.whereGreaterThan("order",24).whereLessThan("order",28).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                modelSdaKrSevenArrayList.clear();
+                modelSdaKrSevenArrayList.addAll(queryDocumentSnapshots.toObjects(ModelSdaKR.class));
+                modelSdaKrSevenArrayList.sort(Comparator.comparing(ModelSdaKR::getOrder));
+            }
+        });
+    }
+
+    public void onClick(View view) {
+        onBackPressed();
     }
 }

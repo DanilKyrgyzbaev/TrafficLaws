@@ -8,23 +8,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.pdd.trafficlaws.OnItemClickListener;
-import com.pdd.trafficlaws.sdakr.model.ModelSdaKrThree;
+import com.pdd.trafficlaws.sdakr.model.ModelSdaKR;
 
 import java.util.List;
 import static com.pdd.trafficlaws.R.*;
 
 public class MySdaKrAdapterThree extends RecyclerView.Adapter<MySdaKrAdapterThree.ViewHolder> {
     private Context context;
-    private List<ModelSdaKrThree> modelSdaKrThree;
+    private List<ModelSdaKR> modelSdaKrThree;
     private OnItemClickListener onItemClickListener;
 
-    public MySdaKrAdapterThree(Context context,List<ModelSdaKrThree>list){
+    public MySdaKrAdapterThree(Context context,List<ModelSdaKR>list){
         this.context = context;
         this.modelSdaKrThree = list;
     }
-
-
-
 
     @NonNull
     @Override
@@ -51,23 +48,15 @@ public class MySdaKrAdapterThree extends RecyclerView.Adapter<MySdaKrAdapterThre
 
         private TextView general_provisions;
 
-
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             general_provisions = itemView.findViewById(id.general_provisions);
 //            description = find
 
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    onItemClickListener.onItemClickListener(getAdapterPosition());
-                }
-            });
+            itemView.setOnClickListener(view -> onItemClickListener.onItemClickListener(getAdapterPosition()));
         }
 
-        void bind(ModelSdaKrThree modelSdaKrThree) {
+        void bind(ModelSdaKR modelSdaKrThree) {
             general_provisions.setText(modelSdaKrThree.getGeneral_provisions());
             //general_provisions.setText(modelSdaKrThree.getGeneral_provisions());
 

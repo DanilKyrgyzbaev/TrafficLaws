@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +15,6 @@ import com.pdd.trafficlaws.sdakr.model.ModelSdaKR;
 //OnTouchListener
 
 public class OnResultSdaKrActivity extends AppCompatActivity {
-    private Toolbar toolbar;
     private TextView description;
     private TextView general_provisions;
     private ModelSdaKR modelSdaKR;
@@ -39,16 +39,12 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
             SDAKR = "SdaKr";
         }
 
-        toolbar = findViewById(R.id.sda_kr_toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_navigate);
         description = findViewById(R.id.sda_kr_on_result_text);
         description.setTextSize(mRatio + 15);
         description.setText(modelSdaKR.getDescription());
 
         general_provisions = findViewById(R.id.sda_kr_on_result);
-        toolbar.setCollapseContentDescription("hknglhkg;");
-        toolbar.setTitle("activity");
-        toolbar.setNavigationOnClickListener(v -> onBackPressed());
+
         general_provisions.setText(modelSdaKR.getGeneral_provisions());
         description.setText(modelSdaKR.getDescription().replaceAll("xx", System.getProperty("line.separator")));
 
@@ -88,6 +84,9 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
     }
 
 
+    public void onClick(View view) {
+        onBackPressed();
+    }
 }
 
 

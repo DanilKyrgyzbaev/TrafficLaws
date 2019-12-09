@@ -44,6 +44,7 @@ public class MySdaKrAdapter extends RecyclerView.Adapter<MySdaKrAdapter.ViewHold
     public int getItemCount() {
         return modelSdaKR.size();
     }
+
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
     }

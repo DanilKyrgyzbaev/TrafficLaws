@@ -25,6 +25,6 @@ public class GasStationPricesActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        finish();
+        onBackPressed();
     }
 }

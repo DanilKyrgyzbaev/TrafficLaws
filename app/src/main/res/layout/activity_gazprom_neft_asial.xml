@@ -68,35 +68,6 @@
             android:textStyle="normal"
             app:layout_constraintTop_toBottomOf="@id/gaztext" />
 
-        <TextView
-            android:id="@+id/gaztext2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="Последнее обновление:"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:textStyle="normal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gaztext1" />
-
-        <TextView
-            android:id="@+id/gaztext3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="06.09.2019"
-            android:textColor="@color/green"
-            android:textSize="14sp"
-            android:textStyle="normal"
-            app:layout_constraintBottom_toBottomOf="@+id/gaztext2"
-            app:layout_constraintHorizontal_bias="0.161"
-            app:layout_constraintLeft_toRightOf="@id/gaztext2"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/gaztext2"
-            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -427,39 +398,33 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="16dp">
 
                 <TextView
                     android:id="@+id/sait1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_height="match_parent"
                     android:text="Цены взята с сайта:"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="center"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/sait"
                     android:textSize="14sp"
+                    android:layout_marginStart="20dp"
                     android:textColor="@color/black"
-                    android:textStyle="normal"
-                    android:layout_marginEnd="90dp"
-                    app:layout_constraintLeft_toRightOf="@id/sait1"
-                    app:layout_constraintRight_toRightOf="parent" />
+                    android:textStyle="normal"/>
 
                 <TextView
                     android:id="@+id/sait"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="06.09.2019"
-                    android:layout_marginStart="5dp"
+                    android:layout_height="match_parent"
+                    android:text="http://www.gazprom-neft.kg/"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/sait1"
+                    android:layout_marginEnd="20dp"
                     android:textSize="14sp"
                     android:textColor="@color/green"
                     android:textStyle="normal"
-                    android:layout_marginEnd="90dp"
-                    app:layout_constraintLeft_toRightOf="@id/sait1"
                     app:layout_constraintRight_toRightOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,7 +10,7 @@ android:layout_height="match_parent">
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/sda_kr"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
+    android:layout_height="270dp"
     android:orientation="vertical"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
