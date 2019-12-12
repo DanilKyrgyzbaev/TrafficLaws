@@ -220,6 +220,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:gravity="center"
+                android:textColor="#FA0303"
                 app:layout_constraintLeft_toRightOf="@id/text5"
                 app:layout_constraintTop_toBottomOf="@id/buttonCalculate"
                 app:layout_constraintRight_toRightOf="parent"
@@ -247,7 +248,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="10dp"
-                android:text="Срок представления информационного расчета: до 1 марта - организации до 1 апреля - физические лица. Срок оплаты налога - не позднее 1 сентября текущего года."
+                android:hint="Срок представления информационного расчета: до 1 марта - организации до 1 апреля - физические лица. Срок оплаты налога - не позднее 1 сентября текущего года."
                 android:textColor="@color/red"
                 android:textStyle="normal"
                 android:gravity="center"/>

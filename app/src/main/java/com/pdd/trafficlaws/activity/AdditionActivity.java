@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -89,12 +90,14 @@ public class AdditionActivity extends AppCompatActivity {
 
 
 
-        calculate.setOnClickListener(v -> {
-            if (editText.getText().toString().isEmpty()){
+        calculate.setOnClickListener(view -> {
+            if (editText.getText().toString().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Введите объём", Toast.LENGTH_LONG).show();
-            }
-            else {
-
+            } else {
+                InputMethodManager imm = (InputMethodManager) getSystemService(this.INPUT_METHOD_SERVICE);
+                if (imm.isActive()) {
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
                 switch (spinner.getSelectedItemPosition()) {
                     case 0:
                         switch (spinnertwo.getSelectedItemPosition()) {

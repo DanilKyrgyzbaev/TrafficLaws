@@ -50,6 +50,8 @@ public class FineActivity extends AppCompatActivity {
             SHTRAF = "Shtraf";
         }
 
+        Log.e("--------------", modelList + "");
+        Log.e("==============", modelList.size() + "");
 
 
         recyclerView = findViewById(R.id.recycler_view_shtraf);
@@ -77,6 +79,8 @@ public class FineActivity extends AppCompatActivity {
             modelList.clear();
             modelList.addAll(queryDocumentSnapshots.toObjects(ModelFine.class));
             modelList.sort(Comparator.comparing(ModelFine::getOrder));
+            Log.e("--------------", modelList + "");
+            Log.e("==============", modelList.size() + "");
             adapter.notifyDataSetChanged();
         });
     }
