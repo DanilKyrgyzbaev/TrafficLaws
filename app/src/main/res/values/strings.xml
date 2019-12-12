@@ -10,7 +10,7 @@
     <string name="auto_news_cr" translatable="false">Автоновости КР</string>
     <string name="gas_station_prices">Цены на Азс</string>
     <string name="shtrafy">Штрафы</string>
-    <string name="statya" translatable="false">КОДЕКС КЫРГЫЗСКОЙ РЕСПУБЛИКИ О НАРУШЕНИЯХ (Введен в действие с 1 января 2019 года)(В редакции Законов КР от 4 августа 2018 года N 85, 10 ноября 2018 года N 94 , 15 февраля 2019 года N 25 , 21 февраля 2019 года N 29 )</string>
+    <string name="statya">КОДЕКС КЫРГЫЗСКОЙ РЕСПУБЛИКИ О НАРУШЕНИЯХ (Введен в действие с 1 января 2019 года)(В редакции Законов КР от 4 августа 2018 года N 85, 10 ноября 2018 года N 94 , 15 февраля 2019 года N 25 , 21 февраля 2019 года N 29 )</string>
     <string name="extronyecall" translatable="false">Экстронные службы</string>
     <string name="reder" translatable="false">Пожарная служба</string>
     <string name="chast" translatable="false">Часть %s</string>

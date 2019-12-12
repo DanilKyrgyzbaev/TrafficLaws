@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gasStationPrices.BishkekPetroliumActivity">
+    tools:context=".gasStationPrices.RedPetroliumActivity">
+
     <LinearLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
@@ -50,45 +51,43 @@
             android:orientation="vertical">
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/gaztext"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:gravity="center"
-                android:text="Bishkek Petrolium "
-                android:textColor="@color/blue"
-                android:textSize="18sp"
-                android:textStyle="normal"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/gaztext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:gravity="center"
+                    android:text="Red Petrolium "
+                    android:textColor="@color/blue"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/gaztext1"
+                <TextView
+                    android:id="@+id/gaztext1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="Цены на Топливо"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintTop_toBottomOf="@id/gaztext" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/red_petrolium_recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:text="Цены на Топливо"
-                android:textColor="@color/black"
-                android:textSize="14sp"
-                android:textStyle="normal"
-                app:layout_constraintTop_toBottomOf="@id/gaztext" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/bishkek_petrolium_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
         </LinearLayout>
 
     </ScrollView>
-
-
 
 
 </LinearLayout>
