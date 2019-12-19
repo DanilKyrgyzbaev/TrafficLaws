@@ -81,7 +81,7 @@ public class OnResultSdaKrSixActivity extends AppCompatActivity {
         return (int) (Math.sqrt(dx * dx + dy * dy));
     }
 
-    public void onClick(View view) {
+    public void onClick6(View view) {
         onBackPressed();
     }
 }

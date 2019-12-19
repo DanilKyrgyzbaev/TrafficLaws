@@ -73,10 +73,9 @@ public class TrafficLawsActivity extends AppCompatActivity {
         six();
         seven();
 
+
     }
-
-
-
+    
     private void one (){
         RecyclerView recyclerView = findViewById(R.id.sda_kr);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

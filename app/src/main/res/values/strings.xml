@@ -20,6 +20,7 @@
     <string name="gazprom_neft" translatable="false">Газпром нефть Азия</string>
     <string name="_1_24" translatable="false">База данных на сервере обновляться 1 раз в течение 24 часов согласно данным, приведенным на официальных сайтах автозаправочных компании</string>
     <string name="kg_menu" translatable="false">kg</string>
+    <string name="fine_check">Проверка Штрафов</string>
 
 
 </resources>

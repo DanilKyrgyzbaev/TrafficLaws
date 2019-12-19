@@ -84,9 +84,11 @@ public class OnResultSdaKrActivity extends AppCompatActivity {
     }
 
 
-    public void onClick(View view) {
+    public void onClick1(View view) {
         onBackPressed();
     }
+
+
 }
 
 

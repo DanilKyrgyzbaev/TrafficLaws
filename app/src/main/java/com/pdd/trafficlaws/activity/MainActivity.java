@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView gas_station_prices;
     private CardView car_insurance;
     private CardView addition;
+    private CardView webView;
     private SwitchCompat switchCompat;
 
     @Override
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         callCentre.setOnClickListener(this);
         trafficLaws.setOnClickListener(this);
         shtraf.setOnClickListener(this);
+        webView.setOnClickListener(this);
         switchCompat.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 Resources res = getResources();
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gas_station_prices = findViewById(R.id.gas_station_prices);
         car_insurance = findViewById(R.id.car_insurance);
         addition = findViewById(R.id.addition);
+        webView = findViewById(R.id.webViewid);
         switchCompat = findViewById(R.id.switchCompat);
         switchCompat.setChecked(getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", true));
         if (switchCompat.isChecked()) {
@@ -129,6 +132,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.fines:
                 launchActivity(FineActivity.class);
+                break;
+            case R.id.webViewid:
+                launchActivity(WebViewActivity.class);
                 break;
         }
     }

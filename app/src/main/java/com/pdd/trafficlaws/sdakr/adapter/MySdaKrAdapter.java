@@ -30,7 +30,7 @@ public class MySdaKrAdapter extends RecyclerView.Adapter<MySdaKrAdapter.ViewHold
     @NonNull
     @Override
     public MySdaKrAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(layout.row_traffic_laws, parent, false);
+        View view = LayoutInflater.from(context).inflate(layout.row_traffic_lawstwo, parent, false);
         return new MySdaKrAdapter.ViewHolder(view);
 
     }

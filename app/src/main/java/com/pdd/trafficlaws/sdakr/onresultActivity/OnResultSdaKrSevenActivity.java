@@ -81,7 +81,7 @@ public class OnResultSdaKrSevenActivity extends AppCompatActivity {
     }
 
 
-    public void onClick(View view) {
+    public void onClick7(View view) {
         onBackPressed();
     }
 }

@@ -79,7 +79,7 @@ public class OnResultSdaKrFifActivity extends AppCompatActivity {
         return (int) (Math.sqrt(dx * dx + dy * dy));
     }
 
-    public void onClick(View view) {
+    public void onClick5(View view) {
         onBackPressed();
     }
 }

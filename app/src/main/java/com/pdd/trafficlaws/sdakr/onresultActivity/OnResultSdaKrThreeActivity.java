@@ -79,4 +79,7 @@ public class OnResultSdaKrThreeActivity extends AppCompatActivity {
         int dy = (int) (event.getY(0) - event.getY(1));
         return (int) (Math.sqrt(dx * dx + dy * dy));
     }
+    public void onClick3(View view) {
+        onBackPressed();
+    }
 }
