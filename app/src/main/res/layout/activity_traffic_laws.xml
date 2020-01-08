@@ -11,6 +11,7 @@
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:elevation="10dp"
         android:orientation="horizontal"
         android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent">
@@ -50,7 +51,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <com.alespero.expandablecardview.ExpandableCardView
@@ -66,7 +67,7 @@
                 android:background="@color/white"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr"
-                app:title="ПДД КР.                            Пункты 1-4.">
+                app:title="@string/pdd_kr">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -83,7 +84,7 @@
                 app:cardElevation="16dp"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr2"
-                app:title="ПДД КР.                            Пункты 5-8.">
+                app:title="@string/pdd_krone">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -100,7 +101,7 @@
                 android:background="@color/white"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr3"
-                app:title="ПДД КР.                            Пункты 9-12.">
+                app:title="@string/pdd_krtwo">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -117,7 +118,7 @@
                 android:background="@color/white"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr4"
-                app:title="ПДД КР.                            Пункты 13-16.">
+                app:title="@string/pdd_krthree">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -134,7 +135,7 @@
                 android:background="@color/white"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr5"
-                app:title="ПДД КР.                            Пункты 17-20.">
+                app:title="@string/pdd_krfo">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -151,7 +152,7 @@
                 android:background="@color/white"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr6"
-                app:title="ПДД КР.                            Пункты 21-24.">
+                app:title="@string/pdd_krfif">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 
@@ -168,7 +169,7 @@
                 android:background="@color/white"
                 app:expandOnClick="true"
                 app:inner_view="@layout/row_sda_kr7"
-                app:title="ПДД КР.                            Пункты 25-27.">
+                app:title="@string/pdd_krsix">
 
             </com.alespero.expandablecardview.ExpandableCardView>
 

@@ -15,8 +15,8 @@
 
             <TextView
                 android:id="@+id/pdd_text"
-                android:layout_width="173dp"
-                android:layout_height="22dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/pdd"
                 android:textColor="@color/black"
@@ -31,16 +31,15 @@
                 android:id="@+id/switchCompat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:textOff="KG"
                 android:textOn="RU"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="5dp"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 android:thumb="@drawable/sw_thumb"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="10dp"
                 app:showText="true"
                 app:track="@drawable/sw_track" />
 
@@ -60,6 +59,40 @@
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:layout_height="match_parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/frequently_violated_traffic_rules"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/white"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="24dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_component1"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/frequent"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:textStyle="normal"/>
+
+            </androidx.cardview.widget.CardView>
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/fines"
@@ -270,9 +303,9 @@
 
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="60dp"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/ic_more"
+                    app:srcCompat="@drawable/nolog"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"/>
 

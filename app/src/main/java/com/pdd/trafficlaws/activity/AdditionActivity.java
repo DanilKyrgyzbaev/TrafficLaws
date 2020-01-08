@@ -40,7 +40,11 @@ public class AdditionActivity extends AppCompatActivity {
         Spinner spinnertwo = findViewById(R.id.spinertwo);
 
 
-
+//  final ArrayAdapter<String> spinnerArrayAdapter=new ArrayAdapter<String>(activity,R.layout.spinner_item,android.R.id.text1,spinnerItemsList)
+//  { @Override public View getDropDownView(final int position,final View convertView,final ViewGroup parent)
+//  { final View v=super.getDropDownView(position,convertView,parent); v.post(new Runnable() { @Override public void run()
+//  { ((TextView)v.findViewById(android.R.id.text1)).setSingleLine(false); } }); return v; } };
+//  spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ArrayAdapter<?> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.array));
         spinner.setAdapter(adapter);
 

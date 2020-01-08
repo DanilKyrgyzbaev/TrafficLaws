@@ -9,6 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
+        android:elevation="10dp"
         android:layout_height="56dp"
         android:foregroundGravity="center"
         android:orientation="horizontal"

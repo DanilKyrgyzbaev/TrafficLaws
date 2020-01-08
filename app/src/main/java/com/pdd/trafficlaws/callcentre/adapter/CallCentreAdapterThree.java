@@ -59,7 +59,7 @@ public class CallCentreAdapterThree extends RecyclerView.Adapter<CallCentreAdapt
         }
         void bind(CallCenterModelThree callCenterModelThree){
             name.setText(callCenterModelThree.getName());
-            number.setText(callCenterModelThree.getNumber());
+            number.setText(callCenterModelThree.getNumber().replaceAll("xx",System.getProperty("line.separator")));
         }
     }
 }

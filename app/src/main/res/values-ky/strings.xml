@@ -5,8 +5,21 @@
     <string name="shtrafy">Айып беренелери</string>
     <string name="gas_station_prices">Күйүүчү май баасы</string>
     <string name="callcentre">Байланыш телефондору</string>
-    <string name="addition">Салык эсептөө 4 группа  КР</string>
+    <string name="addition">"Автооуна салыгын эсептөө "</string>
     <string name="pdd">КР ЖКЭ жана айып пулдар</string>
     <string name="statya">"КЫРГЫЗ РЕСПУБЛИКАСЫНЫН БУЗУУЛАР ЖӨНҮНДӨ КОДЕКСИ (КР 2018-жылдын 4-августундагы N 85, 2018-жылдын 10-ноябрындагы N 94 , 2019-жылдын 15-февралындагы N 25 , 2019-жылдын 21-февралындагы N 29 Мыйзамдарынын редакцияларына ылайык)   "</string>
     <string name="fine_check" translatable="false">ЖКЭ айыптарын текшеруу</string>
+    <string name="extronyecall">Атайын кызматтар</string>
+    <string name="mvdkr">КР ИИМ телефондору</string>
+    <string name="sppravichnyi">КР ЖКККББ телефондору</string>
+    <string name="gujbddbishkek">Бишкек ш. ЖКККББ</string>
+    <string name="bashkatelefondor">Башка байланыш телефондору</string>
+    <string name="frequent">Көп бузулган ЖКЭ</string>
+    <string name="pdd_kr">КР ЖКЭ 1&#8211;4&#8211;пунктар</string>
+    <string name="pdd_krfif">КР ЖКЭ 21&#8211;24&#8211;пунктар</string>
+    <string name="pdd_krfo">КР ЖКЭ 17&#8211;20&#8211;пунктар</string>
+    <string name="pdd_krone">КР ЖКЭ 5&#8211;8&#8211;пунктар</string>
+    <string name="pdd_krsix">КР ЖКЭ 25&#8211;27&#8211;пунктар</string>
+    <string name="pdd_krthree">КР ЖКЭ 13&#8211;16&#8211;пунктар</string>
+    <string name="pdd_krtwo">КР ЖКЭ 9&#8211;12&#8211;пунктар</string>
 </resources>

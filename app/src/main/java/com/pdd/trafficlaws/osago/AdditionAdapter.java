@@ -18,7 +18,6 @@ public class AdditionAdapter extends RecyclerView.Adapter<AdditionAdapter.ViewHo
 
     private Context context;
     private List<AdditionModel> modelAdditionListner;
-    private OnItemClickListener onItemClickListener;
 
     public AdditionAdapter(Context context, List<AdditionModel> list) {
         this.context = context;
@@ -52,7 +51,6 @@ public class AdditionAdapter extends RecyclerView.Adapter<AdditionAdapter.ViewHo
             super(itemView);
             name = itemView.findViewById(R.id.name_osago);
             description = itemView.findViewById(R.id.description_osago);
-            itemView.setOnClickListener(view -> onItemClickListener.onItemClickListener(getAdapterPosition()));
         }
         void  bind (AdditionModel additionModel){
             name.setText(additionModel.getName());

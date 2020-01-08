@@ -5,14 +5,13 @@
     <string name="fines">Штрафы</string>
     <string name="trafficLaws">ПДД</string>
     <string name="callcentre">Телефоны и связи</string>
-    <string name="addition">Расчет налога 4 группы</string>
+    <string name="addition">Расчет налога на авто</string>
     <string name="car_insurance" translatable="false">Страхование ТС</string>
     <string name="auto_news_cr" translatable="false">Автоновости КР</string>
     <string name="gas_station_prices">Цены на Азс</string>
     <string name="shtrafy">Штрафы</string>
     <string name="statya">КОДЕКС КЫРГЫЗСКОЙ РЕСПУБЛИКИ О НАРУШЕНИЯХ (Введен в действие с 1 января 2019 года)(В редакции Законов КР от 4 августа 2018 года N 85, 10 ноября 2018 года N 94 , 15 февраля 2019 года N 25 , 21 февраля 2019 года N 29 )</string>
-    <string name="extronyecall" translatable="false">Экстронные службы</string>
-    <string name="reder" translatable="false">Пожарная служба</string>
+    <string name="extronyecall">Экстронные службы</string>
     <string name="chast" translatable="false">Часть %s</string>
     <string name="polisya" translatable="false">Милиция</string>
     <string name="medical" translatable="false"><![CDATA[<<Медикал Сервис>> частная медицинская служба]]></string>
@@ -21,6 +20,20 @@
     <string name="_1_24" translatable="false">База данных на сервере обновляться 1 раз в течение 24 часов согласно данным, приведенным на официальных сайтах автозаправочных компании</string>
     <string name="kg_menu" translatable="false">kg</string>
     <string name="fine_check">Проверка Штрафов</string>
-
+    <string name="frequent">Часто нарушаемые ПДД</string>
+    <string name="price" translatable="false">1000 сом</string>
+    <string name="documention" translatable="false">Без документов</string>
+    <string name="absent" translatable="false">Нарушение</string>
+    <string name="mvdkr">МВД КР</string>
+    <string name="sppravichnyi">Спровочные ГУОБДД КР</string>
+    <string name="gujbddbishkek">ГУОБДД  г.Бишкек</string>
+    <string name="bashkatelefondor">Другие телефоны</string>
+    <string name="pdd_krone">ПДД КР. Пункты 5&#8211;8.</string>
+    <string name="pdd_kr">ПДД КР. Пункты 1&#8211;4.</string>
+    <string name="pdd_krtwo">ПДД КР. Пункты 9&#8211;12.</string>
+    <string name="pdd_krthree">ПДД КР. Пункты 13&#8211;16.</string>
+    <string name="pdd_krfo">ПДД КР. Пункты 17&#8211;20.</string>
+    <string name="pdd_krfif">ПДД КР. Пункты 21&#8211;24.</string>
+    <string name="pdd_krsix">ПДД КР. Пункты 25&#8211;27.</string>
 
 </resources>

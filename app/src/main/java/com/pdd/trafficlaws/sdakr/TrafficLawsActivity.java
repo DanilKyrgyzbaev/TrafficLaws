@@ -76,7 +76,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
 
     }
     
-    private void one (){
+    private void one() {
         RecyclerView recyclerView = findViewById(R.id.sda_kr);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MySdaKrAdapter mySdaKrAdapter = new MySdaKrAdapter(this, modelSdaKrListlist);
@@ -100,7 +100,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
         });
     }
 //collectionReference.whereLessThan("order", 5).get().addOnSuccessListener
-    private void two (){
+    private void two() {
         RecyclerView recyclerViewtwo = findViewById(R.id.sda_kr2);
         recyclerViewtwo.setLayoutManager(new LinearLayoutManager(this));
         MySdaKrAdapterTwo mySdaKrAdapterTwo = new MySdaKrAdapterTwo(this, modelSdaKrTwoListlist);
@@ -121,7 +121,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
         });
 
     }
-    private void three (){
+    private void three(){
         RecyclerView recyclerViewthree = findViewById(R.id.sda_kr3);
         recyclerViewthree.setLayoutManager(new LinearLayoutManager(this));
         MySdaKrAdapterThree mySdaKrAdapterThree = new MySdaKrAdapterThree(this, modelSdaKrThrees);

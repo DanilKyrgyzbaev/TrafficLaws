@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.pdd.trafficlaws.R;
 
+import java.util.Objects;
+
 public class OnResultFineActivity extends AppCompatActivity {
 
     private TextView chast;
@@ -62,7 +64,8 @@ public class OnResultFineActivity extends AppCompatActivity {
         entities.setText(modelFine.getEntities());
         category.setText(modelFine.getCategory());
         note.setText(modelFine.getNote());
-        absent.setText(modelFine.getAbsent().replaceAll("xx", System.getProperty("line.separator")));
+        absent.setText(modelFine.getAbsent());
+//        absent.setText(modelFine.getAbsent().replaceAll("xx", Objects.requireNonNull(System.getProperty("line.separator"))));
         // это здес бро как тебя не стыдно аа я знала как это тебя может быт тяжело как ты этого не понимаешь ты бля иди суда кодить что бы была абзас или новая строка был копия возми у меня
 
     }

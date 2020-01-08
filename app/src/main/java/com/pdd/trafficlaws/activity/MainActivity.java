@@ -17,6 +17,7 @@ import androidx.cardview.widget.CardView;
 import com.pdd.trafficlaws.R;
 import com.pdd.trafficlaws.callcentre.activity.CallCentreActivity;
 import com.pdd.trafficlaws.fine.FineActivity;
+import com.pdd.trafficlaws.frequent.FrequentActivity;
 import com.pdd.trafficlaws.gasStationPrices.GasStationPricesActivity;
 import com.pdd.trafficlaws.osago.CarInsuranceActivity;
 import com.pdd.trafficlaws.sdakr.TrafficLawsActivity;
@@ -32,11 +33,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView car_insurance;
     private CardView addition;
     private CardView webView;
+    private CardView frequent;
     private SwitchCompat switchCompat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setLanguage();
         setContentView(R.layout.activity_main);
         setupViews();
         setupListeners();
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         trafficLaws.setOnClickListener(this);
         shtraf.setOnClickListener(this);
         webView.setOnClickListener(this);
+        frequent.setOnClickListener(this);
         switchCompat.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 Resources res = getResources();
@@ -92,11 +96,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         callCentre = findViewById(R.id.callCentre);
         gas_station_prices = findViewById(R.id.gas_station_prices);
         car_insurance = findViewById(R.id.car_insurance);
+        frequent = findViewById(R.id.frequently_violated_traffic_rules);
         addition = findViewById(R.id.addition);
         webView = findViewById(R.id.webViewid);
         switchCompat = findViewById(R.id.switchCompat);
-        switchCompat.setChecked(getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", true));
-        if (switchCompat.isChecked()) {
+        Boolean isKyrgyz = getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", true);
+        switchCompat.setChecked(isKyrgyz);
+    }
+
+    private void setLanguage() {
+        Boolean isKyrgyz = getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", true);
+        if (isKyrgyz) {
             Resources res = getResources();
             DisplayMetrics dm = res.getDisplayMetrics();
             Configuration conf = res.getConfiguration();
@@ -135,6 +145,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.webViewid:
                 launchActivity(WebViewActivity.class);
+                break;
+            case R.id.frequently_violated_traffic_rules:
+                launchActivity(FrequentActivity.class);
                 break;
         }
     }

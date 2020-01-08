@@ -63,7 +63,7 @@ public class CallCentreAdapterFo extends RecyclerView.Adapter<CallCentreAdapterF
         }
         void bind(CallCentreModelFo callCenterModelFo){
             name.setText(callCenterModelFo.getName());
-            number.setText(callCenterModelFo.getNumber());
+            number.setText(callCenterModelFo.getNumber().replaceAll("xx",System.getProperty("line.separator")));
         }
     }
 }

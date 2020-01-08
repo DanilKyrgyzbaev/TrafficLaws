@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="array" >
+                    <item>1. Выбирите вид транспорта:</item>
                     <item>Легковые автомобили, фургоны и пикапы
                         на базе легковых автомобилей</item>
                     <item>Грузовые автомобили, автобусы,

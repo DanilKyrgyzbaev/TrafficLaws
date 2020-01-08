@@ -60,7 +60,10 @@ public class CallCenterAdapterFaif extends RecyclerView.Adapter<CallCenterAdapte
         }
         void bind(CallCenterModelFaif callCenterModelFaif){
             name.setText(callCenterModelFaif.getName());
-            number.setText(callCenterModelFaif.getNumber());
+          //  number.setText(callCenterModelFaif.getNumber());
+            number.setText(callCenterModelFaif.getNumber().replaceAll("xx",System.getProperty("line.separator")));
+
+
         }
     }
 }
