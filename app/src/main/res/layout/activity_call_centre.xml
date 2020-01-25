@@ -129,7 +129,6 @@
                 app:title="@string/mvdkr">
 
             </com.alespero.expandablecardview.ExpandableCardView>
-
             <com.alespero.expandablecardview.ExpandableCardView
                 android:id="@+id/profilthree"
                 android:layout_width="match_parent"

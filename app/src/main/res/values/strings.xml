@@ -4,14 +4,14 @@
     <string name="pdd">ПДД и Штрафы КР</string>
     <string name="fines">Штрафы</string>
     <string name="trafficLaws">ПДД</string>
-    <string name="callcentre">Телефоны и связи</string>
+    <string name="callcentre">Телефоны и контакты</string>
     <string name="addition">Расчет налога на авто</string>
     <string name="car_insurance" translatable="false">Страхование ТС</string>
     <string name="auto_news_cr" translatable="false">Автоновости КР</string>
     <string name="gas_station_prices">Цены на Азс</string>
     <string name="shtrafy">Штрафы</string>
     <string name="statya">КОДЕКС КЫРГЫЗСКОЙ РЕСПУБЛИКИ О НАРУШЕНИЯХ (Введен в действие с 1 января 2019 года)(В редакции Законов КР от 4 августа 2018 года N 85, 10 ноября 2018 года N 94 , 15 февраля 2019 года N 25 , 21 февраля 2019 года N 29 )</string>
-    <string name="extronyecall">Экстронные службы</string>
+    <string name="extronyecall">Экстренные службы</string>
     <string name="chast" translatable="false">Часть %s</string>
     <string name="polisya" translatable="false">Милиция</string>
     <string name="medical" translatable="false"><![CDATA[<<Медикал Сервис>> частная медицинская служба]]></string>
@@ -25,7 +25,7 @@
     <string name="documention" translatable="false">Без документов</string>
     <string name="absent" translatable="false">Нарушение</string>
     <string name="mvdkr">МВД КР</string>
-    <string name="sppravichnyi">Спровочные ГУОБДД КР</string>
+    <string name="sppravichnyi">Справочные ГУБДД КР</string>
     <string name="gujbddbishkek">ГУОБДД  г.Бишкек</string>
     <string name="bashkatelefondor">Другие телефоны</string>
     <string name="pdd_krone">ПДД КР. Пункты 5&#8211;8.</string>
@@ -35,5 +35,32 @@
     <string name="pdd_krfo">ПДД КР. Пункты 17&#8211;20.</string>
     <string name="pdd_krfif">ПДД КР. Пункты 21&#8211;24.</string>
     <string name="pdd_krsix">ПДД КР. Пункты 25&#8211;27.</string>
+    <string name="fizichiskyi_lisa" translatable="false">Для физических лиц</string>
 
+
+    <string name="finesKg">Айып пул</string>
+    <string name="trafficLawsKg">ЖКЭ</string>
+    <string name="shtrafyKg">Айып беренелери</string>
+    <string name="gas_station_pricesKg">Күйүүчү май баасы</string>
+    <string name="additionKg">"Автооуна салыгын эсептөө "</string>
+    <string name="pddKg">КР ЖКЭ жана айып пулдар</string>
+    <string name="statyaKg">"КЫРГЫЗ РЕСПУБЛИКАСЫНЫН БУЗУУЛАР ЖӨНҮНДӨ КОДЕКСИ (КР 2018-жылдын 4-августундагы N 85, 2018-жылдын 10-ноябрындагы N 94 , 2019-жылдын 15-февралындагы N 25 , 2019-жылдын 21-февралындагы N 29 Мыйзамдарынын редакцияларына ылайык)   "</string>
+    <string name="fine_checkKg" translatable="false">ЖКЭ айыптарын текшеруу</string>
+
+
+    <string name="callcentreKg">Байланыш телефондору</string>
+    <string name="extronyecallKg">Атайын кызматтар</string>
+    <string name="mvdkrKg">КР ИИМ телефондору</string>
+    <string name="sppravichnyiKg">КР ЖКККББ телефондору</string>
+    <string name="gujbddbishkekKg">Бишкек ш. ЖКККББ</string>
+    <string name="bashkatelefondorKg">Башка байланыш телефондору</string>
+
+    <string name="frequentKg">Көп бузулган ЖКЭ</string>
+    <string name="pdd_krKg">КР ЖКЭ 1&#8211;4&#8211;пунктар</string>
+    <string name="pdd_krfifKg">КР ЖКЭ 21&#8211;24&#8211;пунктар</string>
+    <string name="pdd_krfoKg">КР ЖКЭ 17&#8211;20&#8211;пунктар</string>
+    <string name="pdd_kroneKg">КР ЖКЭ 5&#8211;8&#8211;пунктар</string>
+    <string name="pdd_krsixKg">КР ЖКЭ 25&#8211;27&#8211;пунктар</string>
+    <string name="pdd_krthreeKg">КР ЖКЭ 13&#8211;16&#8211;пунктар</string>
+    <string name="pdd_krtwoKg">КР ЖКЭ 9&#8211;12&#8211;пунктар</string>
 </resources>

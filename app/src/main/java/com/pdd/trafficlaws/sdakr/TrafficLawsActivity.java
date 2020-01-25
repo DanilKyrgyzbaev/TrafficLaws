@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.alespero.expandablecardview.ExpandableCardView;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -48,16 +50,35 @@ public class TrafficLawsActivity extends AppCompatActivity {
     private ArrayList<ModelSdaKR> modelSdaKrFifArrayList = new ArrayList<>();
     private ArrayList<ModelSdaKR> modelSdaKrSixArrayList = new ArrayList<>();
     private ArrayList<ModelSdaKR> modelSdaKrSevenArrayList = new ArrayList<>();
+    private TextView shtraf;
+    private ExpandableCardView pdd_kr,pdd_krone,pdd_krtwo,pdd_krthree,pdd_krfo,pdd_krfif,pdd_krsix;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_traffic_laws);
 
+        shtraf = findViewById(R.id.sda_kr_on_result);
+        pdd_kr = findViewById(R.id.pdd_kr);
+        pdd_krone = findViewById(R.id.pdd_krone);
+        pdd_krtwo = findViewById(R.id.pdd_krtwo);
+        pdd_krthree = findViewById(R.id.pdd_krthree);
+        pdd_krfo = findViewById(R.id.pdd_krfo);
+        pdd_krfif = findViewById(R.id.pdd_krfif);
+        pdd_krsix = findViewById(R.id.pdd_krsix);
+
 
 
         if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
             SDAKR = "SdaKrKg";
+            shtraf.setText(getResources().getText(R.string.shtrafyKg));
+            pdd_kr.setTitle(getResources().getText(R.string.pdd_krKg).toString());
+            pdd_krone.setTitle(getResources().getText(R.string.pdd_kroneKg).toString());
+            pdd_krtwo.setTitle(getResources().getText(R.string.pdd_krtwoKg).toString());
+            pdd_krthree.setTitle(getResources().getText(R.string.pdd_krthreeKg).toString());
+            pdd_krfo.setTitle(getResources().getText(R.string.pdd_krfoKg).toString());
+            pdd_krfif.setTitle(getResources().getText(R.string.pdd_krfifKg).toString());
+            pdd_krsix.setTitle(getResources().getText(R.string.pdd_krsixKg).toString());
         } else {
             SDAKR = "SdaKr";
         }
@@ -150,7 +171,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
         recyclerViewFo.setAdapter(mySdaKrAdapterFo);
         mySdaKrAdapterFo.setOnItemClickListener(position -> {
             Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrFoActivity.class);
-            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            intent.putExtra("SdaKr",modelSdaKrFoArrayList.get(position));
             startActivity(intent);
         });
         collectionReference.whereGreaterThan("order",12).whereLessThan("order",17).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -170,7 +191,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
         recyclerViewFif.setAdapter(mySdaKrAdapterFif);
         mySdaKrAdapterFif.setOnItemClickListener(position -> {
             Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrFifActivity.class);
-            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            intent.putExtra("SdaKr",modelSdaKrFifArrayList.get(position));
             startActivity(intent);
         });
         collectionReference.whereGreaterThan("order",16).whereLessThan("order",21).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -191,7 +212,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
         recyclerViewSix.setAdapter(mySdaKrAdapterSix);
         mySdaKrAdapterSix.setOnItemClickListener(position -> {
             Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrSixActivity.class);
-            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            intent.putExtra("SdaKr",modelSdaKrSixArrayList.get(position));
             startActivity(intent);
         });
         collectionReference.whereGreaterThan("order",20).whereLessThan("order",25).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -212,7 +233,7 @@ public class TrafficLawsActivity extends AppCompatActivity {
         recyclerViewSeven.setAdapter(mySdaKrAdapterSeven);
         mySdaKrAdapterSeven.setOnItemClickListener(position -> {
             Intent intent = new Intent(TrafficLawsActivity.this, OnResultSdaKrSevenActivity.class);
-            intent.putExtra("SdaKr",modelSdaKrThrees.get(position));
+            intent.putExtra("SdaKr",modelSdaKrSevenArrayList.get(position));
             startActivity(intent);
         });
         collectionReference.whereGreaterThan("order",24).whereLessThan("order",28).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {

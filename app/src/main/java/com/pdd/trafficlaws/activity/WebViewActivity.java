@@ -12,6 +12,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+
 import com.pdd.trafficlaws.R;
 
 public class WebViewActivity extends AppCompatActivity {
@@ -45,8 +46,8 @@ public class WebViewActivity extends AppCompatActivity {
             webView.goBack();
 
         } else {
-            new AlertDialog.Builder(this).setTitle("действительно выход? ")
-                    .setMessage("Ты уверен, что хочешь выйти?")
+            new AlertDialog.Builder(this).setTitle("Подтвердите действие ")
+                    .setMessage("Вы действительно хотите выйти?")
                     .setNegativeButton(android.R.string.no, (dialog, which) -> dialog.dismiss())
                     .setPositiveButton(android.R.string.yes, (arg0, arg1) -> {
                         finish();

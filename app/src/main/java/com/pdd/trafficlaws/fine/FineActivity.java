@@ -44,14 +44,21 @@ public class FineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fine);
+
+        TextView obnofText = findViewById(R.id.obnof);
+        TextView sda_kr_on_resultText = findViewById(R.id.sda_kr_on_result);
+
         if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
             SHTRAF = "ShtrafKg";
+            obnofText.setText(getResources().getText(R.string.statyaKg));
+            sda_kr_on_resultText.setText(getResources().getText(R.string.shtrafyKg));
         } else {
             SHTRAF = "Shtraf";
         }
 
         Log.e("--------------", modelList + "");
         Log.e("==============", modelList.size() + "");
+
 
 
         recyclerView = findViewById(R.id.recycler_view_shtraf);
@@ -87,4 +94,5 @@ public class FineActivity extends AppCompatActivity {
     public void onClick(View view) {
         finish();
     }
+
 }

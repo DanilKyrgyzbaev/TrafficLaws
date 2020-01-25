@@ -55,6 +55,7 @@
             android:orientation="vertical">
 
             <com.alespero.expandablecardview.ExpandableCardView
+                android:id="@+id/pdd_kr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -72,6 +73,7 @@
             </com.alespero.expandablecardview.ExpandableCardView>
 
             <com.alespero.expandablecardview.ExpandableCardView
+                android:id="@+id/pdd_krone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -89,6 +91,7 @@
             </com.alespero.expandablecardview.ExpandableCardView>
 
             <com.alespero.expandablecardview.ExpandableCardView
+                android:id="@+id/pdd_krtwo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -106,6 +109,7 @@
             </com.alespero.expandablecardview.ExpandableCardView>
 
             <com.alespero.expandablecardview.ExpandableCardView
+                android:id="@+id/pdd_krthree"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -123,6 +127,7 @@
             </com.alespero.expandablecardview.ExpandableCardView>
 
             <com.alespero.expandablecardview.ExpandableCardView
+                android:id="@+id/pdd_krfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -140,6 +145,7 @@
             </com.alespero.expandablecardview.ExpandableCardView>
 
             <com.alespero.expandablecardview.ExpandableCardView
+                android:id="@+id/pdd_krfif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -157,6 +163,7 @@
             </com.alespero.expandablecardview.ExpandableCardView>
 
             <com.alespero.expandablecardview.ExpandableCardView
+                android:id="@+id/pdd_krsix"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

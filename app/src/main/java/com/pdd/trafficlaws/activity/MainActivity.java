@@ -8,7 +8,9 @@ import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
@@ -35,21 +37,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView webView;
     private CardView frequent;
     private SwitchCompat switchCompat;
+    private boolean isKyrgyz;
+
+    private TextView pddText, frequentText, finesText, trafficLawsText, callcentreText, gas_station_pricesText, fine_checkText, additionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setLanguage();
         setContentView(R.layout.activity_main);
+
+        isKyrgyz = getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", true);
         setupViews();
         setupListeners();
         Toolbar toolbar = findViewById(R.id.app_bar_layout);
         setSupportActionBar(toolbar);
+        changeLanguage(isKyrgyz);
     }
 
     private void setupListeners() {
         addition.setOnClickListener(this);
-        car_insurance.setOnClickListener(this);
+//        car_insurance.setOnClickListener(this);
         gas_station_prices.setOnClickListener(this);
         callCentre.setOnClickListener(this);
         trafficLaws.setOnClickListener(this);
@@ -58,30 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         frequent.setOnClickListener(this);
         switchCompat.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                Resources res = getResources();
-                DisplayMetrics dm = res.getDisplayMetrics();
-                Configuration conf = res.getConfiguration();
-                conf.setLocale(new Locale("ky"));
-                res.updateConfiguration(conf, dm);
                 getSharedPreferences("settings", MODE_PRIVATE).edit().putBoolean("ky", true).apply();
-                finish();
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
-                overridePendingTransition(R.anim.animation, R.anim.animationtwo);
             } else {
-                Resources res = getResources();
-                DisplayMetrics dm = res.getDisplayMetrics();
-                Configuration conf = res.getConfiguration();
-                conf.setLocale(new Locale(""));
-                res.updateConfiguration(conf, dm);
                 getSharedPreferences("settings", MODE_PRIVATE).edit().putBoolean("ky", false).apply();
-                finish();
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
-                overridePendingTransition(R.anim.animation, R.anim.animationtwo);
             }
+            changeLanguage(isChecked);
         });
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -95,30 +85,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         trafficLaws = findViewById(R.id.trafficLaws);
         callCentre = findViewById(R.id.callCentre);
         gas_station_prices = findViewById(R.id.gas_station_prices);
-        car_insurance = findViewById(R.id.car_insurance);
+      //  car_insurance = findViewById(R.id.car_insurance);
         frequent = findViewById(R.id.frequently_violated_traffic_rules);
         addition = findViewById(R.id.addition);
         webView = findViewById(R.id.webViewid);
         switchCompat = findViewById(R.id.switchCompat);
-        Boolean isKyrgyz = getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", true);
         switchCompat.setChecked(isKyrgyz);
-    }
-
-    private void setLanguage() {
-        Boolean isKyrgyz = getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", true);
-        if (isKyrgyz) {
-            Resources res = getResources();
-            DisplayMetrics dm = res.getDisplayMetrics();
-            Configuration conf = res.getConfiguration();
-            conf.setLocale(new Locale("ky"));
-            res.updateConfiguration(conf, dm);
-        } else {
-            Resources res = getResources();
-            DisplayMetrics dm = res.getDisplayMetrics();
-            Configuration conf = res.getConfiguration();
-            conf.setLocale(new Locale(""));
-            res.updateConfiguration(conf, dm);
-        }
+        pddText = findViewById(R.id.pdd_text);
+        frequentText = findViewById(R.id.tv_frequent);
+        finesText = findViewById(R.id.tv_fines);
+        trafficLawsText = findViewById(R.id.tv_trafficLaws);
+        callcentreText = findViewById(R.id.tv_callcentre);
+        gas_station_pricesText = findViewById(R.id.tv_gas_station_prices);
+        fine_checkText = findViewById(R.id.tv_fine_check);
+        additionText = findViewById(R.id.tv_addition);
     }
 
     @Override
@@ -127,10 +107,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.addition:
                 launchActivity(AdditionActivity.class);
                 break;
-            case R.id.car_insurance:
-                launchActivity(CarInsuranceActivity.class);
-                break;
-
+//            case R.id.car_insurance:
+//                launchActivity(CarInsuranceActivity.class);
+//                break;
             case R.id.gas_station_prices:
                 launchActivity(GasStationPricesActivity.class);
                 break;
@@ -155,4 +134,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void launchActivity(Class<?> calledActivity) {
         startActivity(new Intent(MainActivity.this, calledActivity));
     }
+
+    @Override
+    public void onBackPressed() {
+
+        new AlertDialog.Builder(this).setTitle("Подтвердите действие ")
+                    .setMessage("Вы действительно хотите выйти?")
+                    .setNegativeButton(android.R.string.no, (dialog, which) -> dialog.dismiss())
+                    .setPositiveButton(android.R.string.yes, (arg0, arg1) -> {
+                        finish();
+                    }).create().show();
+    }
+
+
+    private void changeLanguage(boolean ky){
+        if (ky) {
+            pddText.setText(getResources().getText(R.string.pddKg));
+            frequentText.setText(getResources().getText(R.string.frequentKg));
+            finesText.setText(getResources().getText(R.string.finesKg));
+            trafficLawsText.setText(getResources().getText(R.string.trafficLawsKg));
+            callcentreText.setText(getResources().getText(R.string.callcentreKg));
+            gas_station_pricesText.setText(getResources().getText(R.string.gas_station_pricesKg));
+            fine_checkText.setText(getResources().getText(R.string.fine_checkKg));
+            additionText.setText(getResources().getText(R.string.additionKg));
+        } else {
+            pddText.setText(getResources().getText(R.string.pdd));
+            frequentText.setText(getResources().getText(R.string.frequent));
+            finesText.setText(getResources().getText(R.string.fines));
+            trafficLawsText.setText(getResources().getText(R.string.trafficLaws));
+            callcentreText.setText(getResources().getText(R.string.callcentre));
+            gas_station_pricesText.setText(getResources().getText(R.string.gas_station_prices));
+            fine_checkText.setText(getResources().getText(R.string.fine_check));
+            additionText.setText(getResources().getText(R.string.addition));
+        }
+    }
+//    private TextView pddText, frequentText, finesText, trafficLawsText, callcentreText, gas_station_pricesText, fine_checkText, additionText;
+
 }

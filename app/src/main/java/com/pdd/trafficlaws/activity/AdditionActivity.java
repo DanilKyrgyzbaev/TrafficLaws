@@ -23,6 +23,7 @@ public class AdditionActivity extends AppCompatActivity {
     private Button calculate;
     private TextView result;
     private EditText editText;
+    private TextView sda_kr_on_result;
 
 
 
@@ -38,6 +39,14 @@ public class AdditionActivity extends AppCompatActivity {
         calculate = findViewById(R.id.buttonCalculate);
         Spinner spinner = findViewById(R.id.spiner);
         Spinner spinnertwo = findViewById(R.id.spinertwo);
+
+        sda_kr_on_result = findViewById(R.id.sda_kr_on_result);
+
+
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
+            sda_kr_on_result.setText(getText(R.string.additionKg));
+        }
+
 
 
 //  final ArrayAdapter<String> spinnerArrayAdapter=new ArrayAdapter<String>(activity,R.layout.spinner_item,android.R.id.text1,spinnerItemsList)

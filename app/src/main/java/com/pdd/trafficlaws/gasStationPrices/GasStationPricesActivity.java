@@ -5,6 +5,8 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 import com.pdd.trafficlaws.R;
 
 import io.grpc.Internal;
@@ -15,6 +17,7 @@ public class GasStationPricesActivity extends AppCompatActivity {
     private CardView bishkek_petrolium_asia;
     private CardView redpetrolium_cardview;
     private CardView rosneft_cardview;
+    private TextView sda_kr_on_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,12 @@ public class GasStationPricesActivity extends AppCompatActivity {
         bishkek_petrolium_cardview();
         redpetrolium();
         rosneft();
+
+        sda_kr_on_result = findViewById(R.id.sda_kr_on_result);
+
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
+           sda_kr_on_result.setText(getText(R.string.gas_station_pricesKg));
+        }
     }
 
     public void gazprom_neft_asia_cardview1(){

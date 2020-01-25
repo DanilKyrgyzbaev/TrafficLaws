@@ -27,38 +27,38 @@ import java.util.List;
 
 public class CarInsuranceActivity extends AppCompatActivity {
 
-    private static final String TAG = "tag" ;
-    private FirebaseFirestore db;
-    private CollectionReference ref;
-    private RecyclerView recyclerView;
-    private AdditionAdapter additionAdapter;
-    private TextView textView;
-    private List<AdditionModel> modelList = new ArrayList<>();
+//    private static final String TAG = "tag" ;
+//    private FirebaseFirestore db;
+//    private CollectionReference ref;
+//    private RecyclerView recyclerView;
+//    private AdditionAdapter additionAdapter;
+//    private TextView textView;
+//    private List<AdditionModel> modelList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_insurance);
 
-        recyclerView = findViewById(R.id.recycler_view_Osago);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        additionAdapter = new AdditionAdapter(this,modelList);
-        recyclerView.setAdapter(additionAdapter);
-        textView = findViewById(R.id.description_osago);
-
-
-        db = FirebaseFirestore.getInstance();
-        ref = db.collection("Osago");
-        ref.get().addOnSuccessListener(queryDocumentSnapshots -> {
-            Log.e("ololo",  "");
-            modelList.clear();
-            modelList.addAll(queryDocumentSnapshots.toObjects(AdditionModel.class));
-            additionAdapter.notifyDataSetChanged();
-        });
+//        recyclerView = findViewById(R.id.recycler_view_Osago);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        additionAdapter = new AdditionAdapter(this,modelList);
+//        recyclerView.setAdapter(additionAdapter);
+//        textView = findViewById(R.id.description_osago);
+//
+//
+//        db = FirebaseFirestore.getInstance();
+//        ref = db.collection("Osago");
+//        ref.get().addOnSuccessListener(queryDocumentSnapshots -> {
+//            Log.e("ololo",  "");
+//            modelList.clear();
+//            modelList.addAll(queryDocumentSnapshots.toObjects(AdditionModel.class));
+//            additionAdapter.notifyDataSetChanged();
+//        });
 
     }
 
-    public void onClick(View view) {
-        onBackPressed();
-    }
+//    public void onClick(View view) {
+//        onBackPressed();
+//    }
 }

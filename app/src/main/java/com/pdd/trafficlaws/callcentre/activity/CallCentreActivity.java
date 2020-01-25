@@ -7,11 +7,15 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.alespero.expandablecardview.ExpandableCardView;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.pdd.trafficlaws.R;
@@ -43,11 +47,33 @@ public class CallCentreActivity extends AppCompatActivity {
     private ArrayList<CallCentreModelFo> callCentreModelFos = new ArrayList<>();
     private ArrayList<CallCenterModelFaif> callCenterModelFaifs = new ArrayList<>();
 
+    private TextView sda_kr_on_result;
+    private ExpandableCardView profil,profiltwo,profilthree,profilfo,profilfaif;
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_centre);
+
+        sda_kr_on_result = findViewById(R.id.sda_kr_on_result);
+        profil = findViewById(R.id.profil);
+        profiltwo = findViewById(R.id.profiltwo);
+        profilthree = findViewById(R.id.profilthree);
+        profilfo = findViewById(R.id.profilfo);
+        profilfaif = findViewById(R.id.profilfaif);
+
+        if (getSharedPreferences("settings", MODE_PRIVATE).getBoolean("ky", false)){
+            sda_kr_on_result.setText(getResources().getText(R.string.callcentreKg));
+            profil.setTitle(getResources().getText(R.string.extronyecallKg).toString());
+            profiltwo.setTitle(getResources().getText(R.string.mvdkrKg).toString());
+            profilthree.setTitle(getResources().getText(R.string.sppravichnyiKg).toString());
+            profilfo.setTitle(getResources().getText(R.string.gujbddbishkekKg).toString());
+            profilfaif.setTitle(getResources().getText(R.string.bashkatelefondorKg).toString());
+
+
+        }
+
         RecyclerView recyclerView = findViewById(R.id.row_callcentre);
         RecyclerView recyclerViewtwo = findViewById(R.id.row_callcentretwo);
         RecyclerView recyclerViewthree = findViewById(R.id.row_callcentrethree);
